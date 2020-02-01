@@ -1,0 +1,4 @@
+sheet stethoscope kosong
+tool sonicvision di table gada, tapi di sheet ada
+tool periscope 6 di table gada, tapi di sheet ada
+tool Digiscope di dokumen ada, tapi di sheet gak ada
