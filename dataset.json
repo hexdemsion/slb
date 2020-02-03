@@ -39,120 +39,140 @@
     },
     "tool": [
         {
+            "id": 1,
             "name": "ADN 4",
             "view": 2,
             "id_uphole": [],
             "id_downhole": [14,15,16]
         },
         {
+            "id": 2,
             "name": "ARC 6",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10]
         },
         {
+            "id": 3,
             "name": "ARC 8",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10]
         },
         {
+            "id": 4,
             "name": "ARC 9",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10]
         },
         {
+            "id": 5,
             "name": "Ecoscope",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10]
         },
         {
+            "id": 6,
             "name": "Geosphere Transmitter",
             "view": 0,
             "id_uphole": [8],
             "id_downhole": [14,15,16]
         },
         {
+            "id": 7,
             "name": "Geosphere Receiver",
             "view": 0,
             "id_uphole": [8],
             "id_downhole": [14,15,16]
         },
         {
+            "id": 8,
             "name": "Gyropulse",
             "view": 0,
             "id_uphole": [1,2,3],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10,13]
         },
         {
+            "id": 9,
             "name": "Impulse",
             "view": 1,
             "id_uphole": [9],
             "id_downhole": [14,15,16]
         },
         {
+            "id": 10,
             "name": "Microscope 4",
             "view": 0,
             "id_uphole": [8],
             "id_downhole": [14,15,16]
         },
         {
+            "id": 11,
             "name": "Microscope 6",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10]
         },
         {
+            "id": 12,
             "name": "Optidrill 6",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [6,7,8,9,10]
         },
         {
+            "id": 13,
             "name": "Optidrill 9",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [6,7,8,9,10]
         },
         {
+            "id": 14,
             "name": "Periscope 6",
             "view": 0,
             "id_uphole": [4,5,6,7],
             "id_downhole": [6,7,8,9,10]
         },
         {
+            "id": 15,
             "name": "Periscope 4",
             "view": 0,
             "id_uphole": [8],
             "id_downhole": [14,15,16]
         },
         {
+            "id": 16,
             "name": "Sonicscope 6",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10]
         },
         {
+            "id": 17,
             "name": "Telescope IWOB",
             "view": 0,
             "id_uphole": [1,2,3],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10,13]
         },
         {
+            "id": 18,
             "name": "Telescope Non IWOB",
             "view": 0,
             "id_uphole": [1,2,3],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10,13]
         },
         {
+            "id": 19,
             "name": "VPWD",
             "view": 0,
             "id_uphole": [8],
             "id_downhole": [14,15,16]
         },
         {
+            "id": 20,
             "name": "Sonicvision",
             "view": 0,
             "id_uphole": [1,2,3],

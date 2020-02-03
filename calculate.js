@@ -1,3 +1,68 @@
+var DATASET = {"extender": {"type": {"uphole": [{"id": 1, "name": "MEXM-BA", "min": 28.13, "max": 31.65, "tolerance": 0}, {"id": 2, "name": "MEXM-AA", "min": 31.63, "max": 35.15, "tolerance": 0}, {"id": 3, "name": "MEXM-DA", "min": 34.13, "max": 37.65, "tolerance": 0}, {"id": 4, "name": "EXTM-CB", "min": 11.25, "max": 13.75, "tolerance": 0}, {"id": 5, "name": "EXTM-BB", "min": 13.37, "max": 15.87, "tolerance": 0}, {"id": 6, "name": "EXTM-FA", "min": 15.49, "max": 17.99, "tolerance": 0}, {"id": 7, "name": "EXTM-GB", "min": 17.58, "max": 20.14, "tolerance": 0}, {"id": 8, "name": "RTLM-CC", "min": 29.54, "max": 32.28, "tolerance": 0}, {"id": 9, "name": "RTLM-BD", "min": 39.28, "max": 42.02, "tolerance": 0} ], "downhole": [{"id": 1, "name": "EXTF-AA", "min": 12.82, "max": 15.16, "tolerance": 0}, {"id": 2, "name": "EXTF-BA", "min": 10.41, "max": 12.75, "tolerance": 0}, {"id": 3, "name": "EXTF-CA", "min": 8.06, "max": 10.40, "tolerance": 0}, {"id": 4, "name": "EXTF-DA", "min": 12.82, "max": 15.16, "tolerance": 0}, {"id": 5, "name": "EXTF-DB", "min": 12.82, "max": 15.16, "tolerance": 0}, {"id": 6, "name": "MEXD-GA", "min": 22.36, "max": 24.36, "tolerance": 26.86}, {"id": 7, "name": "MEXD-DB", "min": 25.36, "max": 27.76, "tolerance": 30.26}, {"id": 8, "name": "MEXD-BA", "min": 27.82, "max": 30.16, "tolerance": 32.66}, {"id": 9, "name": "MEXD-CB", "min": 30.22, "max": 32.56, "tolerance": 35.06}, {"id": 10, "name": "MEXD-EB", "min": 31.96, "max": 34.36, "tolerance": 36.86}, {"id": 11, "name": "MXLD-DA", "min": 49.39, "max": 51.73, "tolerance": 54.23}, {"id": 12, "name": "MXLD-BA", "min": 51.82, "max": 54.16, "tolerance": 56.66}, {"id": 13, "name": "MXLD-G/BA", "min": 51.82, "max": 54.16, "tolerance": 56.66}, {"id": 14, "name": "RTLF-CA", "min": 12.85, "max": 13.75, "tolerance": 0}, {"id": 15, "name": "RTLF-BB", "min": 14.96, "max": 17.58, "tolerance": 0}, {"id": 16, "name": "RTLF-EA", "min": 28.81, "max": 31.43, "tolerance": 0} ] } }, "tool": [{"id": 1, "name": "ADN 4", "view": 2, "id_uphole": [], "id_downhole": [14,15,16] }, {"id": 2, "name": "ARC 6", "view": 0, "id_uphole": [1,2,3,4,5,6,7], "id_downhole": [1,2,3,4,5,6,7,8,9,10] }, {"id": 3, "name": "ARC 8", "view": 0, "id_uphole": [1,2,3,4,5,6,7], "id_downhole": [1,2,3,4,5,6,7,8,9,10] }, {"id": 4, "name": "ARC 9", "view": 0, "id_uphole": [1,2,3,4,5,6,7], "id_downhole": [1,2,3,4,5,6,7,8,9,10] }, {"id": 5, "name": "Ecoscope", "view": 0, "id_uphole": [1,2,3,4,5,6,7], "id_downhole": [1,2,3,4,5,6,7,8,9,10] }, {"id": 6, "name": "Geosphere Transmitter", "view": 0, "id_uphole": [8], "id_downhole": [14,15,16] }, {"id": 7, "name": "Geosphere Receiver", "view": 0, "id_uphole": [8], "id_downhole": [14,15,16] }, {"id": 8, "name": "Gyropulse", "view": 0, "id_uphole": [1,2,3], "id_downhole": [1,2,3,4,5,6,7,8,9,10,13] }, {"id": 9, "name": "Impulse", "view": 1, "id_uphole": [9], "id_downhole": [14,15,16] }, {"id": 10, "name": "Microscope 4", "view": 0, "id_uphole": [8], "id_downhole": [14,15,16] }, {"id": 11, "name": "Microscope 6", "view": 0, "id_uphole": [1,2,3,4,5,6,7], "id_downhole": [1,2,3,4,5,6,7,8,9,10] }, {"id": 12, "name": "Optidrill 6", "view": 0, "id_uphole": [1,2,3,4,5,6,7], "id_downhole": [6,7,8,9,10] }, {"id": 13, "name": "Optidrill 9", "view": 0, "id_uphole": [1,2,3,4,5,6,7], "id_downhole": [6,7,8,9,10] }, {"id": 14, "name": "Periscope 6", "view": 0, "id_uphole": [4,5,6,7], "id_downhole": [6,7,8,9,10] }, {"id": 15, "name": "Periscope 4", "view": 0, "id_uphole": [8], "id_downhole": [14,15,16] }, {"id": 16, "name": "Sonicscope 6", "view": 0, "id_uphole": [1,2,3,4,5,6,7], "id_downhole": [1,2,3,4,5,6,7,8,9,10] }, {"id": 17, "name": "Telescope IWOB", "view": 0, "id_uphole": [1,2,3], "id_downhole": [1,2,3,4,5,6,7,8,9,10,13] }, {"id": 18, "name": "Telescope Non IWOB", "view": 0, "id_uphole": [1,2,3], "id_downhole": [1,2,3,4,5,6,7,8,9,10,13] }, {"id": 19, "name": "VPWD", "view": 0, "id_uphole": [8], "id_downhole": [14,15,16] }, {"id": 20, "name": "Sonicvision", "view": 0, "id_uphole": [1,2,3], "id_downhole": [11,12] } ] }
+
+function get_extender_type(id_tool, hole, fin_len) {
+	if (hole == "uphole") {
+		var hole_list = DATASET.tool.find(el => el.id === id_tool).id_uphole
+		var maybe_ext = DATASET.extender.type.uphole
+		var final_ext = []
+
+		for (var i = 0; i < hole_list.length; i++) {
+			var tool = DATASET.extender.type.uphole.find(el => el.id === hole_list[i])
+			var min = tool.min
+			var max = tool.max
+			var tolerance = tool.tolerance
+
+			if ((fin_len-min)*(fin_len-max)<0) {
+				final_ext.push(tool)
+			}
+		}
+
+		return final_ext
+
+	}else if (hole == "downhole") {
+		var hole_list = DATASET.tool.find(el => el.id === id_tool).id_downhole
+		var maybe_ext = DATASET.extender.type.downhole
+		var final_ext = []
+
+		for (var i = 0; i < hole_list.length; i++) {
+			var tool = DATASET.extender.type.downhole.find(el => el.id === hole_list[i])
+			var min = tool.min
+			var max = tool.max
+			var tolerance = tool.tolerance
+
+			if ((fin_len-min)*(fin_len-max)<0) {
+				final_ext.push(tool)
+			}
+		}
+
+		return final_ext
+	}
+}
+
+// var ext_type = get_extender_type(5, "uphole", ecoscope_uphole_pin(233, 14.5))
+// var ext_type = get_extender_type(5, "uphole", ecoscope_uphole_box(233, 0))
+var ext_type = get_extender_type(5, "downhole", ecoscope_downhole_box(69.225))
+
+console.log(ext_type)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*ECOSCOPE*/
 function ecoscope_uphole_box(rop2usc, crossover) {
 	if (crossover == 0) {
@@ -5,26 +70,26 @@ function ecoscope_uphole_box(rop2usc, crossover) {
 	}else{
 		var fin_len = rop2usc-216.678+crossover-1.838
 	}
-	console.log(fin_len)
+	return fin_len
 }
 // ecoscope_uphole_box(233, 14.5)
 // ecoscope_uphole_box(233, 0)
 
 function ecoscope_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-216.678+crossover+3.257
-	console.log(fin_len)
+	return fin_len
 }
 // ecoscope_uphole_pin(233, 14.5)
 
 function ecoscope_downhole_box(rop2usc) {
 	var fin_len = rop2usc-53.125-1.678
-	console.log(fin_len)
+	return fin_len
 }
 // ecoscope_downhole_box(69.225)
 
 function ecoscope_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-53.125+crossover+3.4
-	console.log(fin_len)
+	return fin_len
 }
 // ecoscope_downhole_pin(69.225, 10)
 
@@ -40,26 +105,26 @@ function arc6_uphole_box(rop2usc, crossover) {
 	}else{
 		var fin_len = rop2usc-74.74+crossover-1.838
 	}
-	console.log(fin_len)
+	return fin_len
 }
 // arc6_uphole_box(87.3125, 19)
 // arc6_uphole_box(87.3125, 0)
 
 function arc6_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-74.74+crossover+3.257
-	console.log(fin_len)
+	return fin_len
 }
 // arc6_uphole_pin(87.3125, 14.5)
 
 function arc6_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-110.15+crossover+3.4
-	console.log(fin_len)
+	return fin_len
 }
 // arc6_downhole_pin(123, 14.5)
 
 function arc6_downhole_box(rop2usc) {
 	var fin_len = rop2usc-110.15-1.678
-	console.log(fin_len)
+	return fin_len
 }
 // arc6_downhole_box(123)
 
@@ -77,26 +142,26 @@ function arc8_uphole_box(rop2usc, crossover) {
 	}else{
 		var fin_len = rop2usc-74.966+crossover-1.838
 	}
-	console.log(fin_len)
+	return fin_len
 }
 // arc8_uphole_box(87.3125, 19)
 // arc8_uphole_box(85.625, 0)
 
 function arc8_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-74.966+crossover+3.257
-	console.log(fin_len)
+	return fin_len
 }
 // arc8_uphole_pin(87.3125, 19)
 
 function arc8_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-110.19+crossover+3.417
-	console.log(fin_len)
+	return fin_len
 }
 // arc8_downhole_pin(121, 14.5)
 
 function arc8_downhole_box(rop2usc) {
 	var fin_len = rop2usc-110.19-1.678
-	console.log(fin_len)
+	return fin_len
 }
 // arc8_downhole_box(121)
 
@@ -112,26 +177,26 @@ function arc9_uphole_box(rop2usc, crossover) {
 	}else{
 		var fin_len = rop2usc-74.966+crossover-1.838
 	}
-	console.log(fin_len)
+	return fin_len
 }
 // arc9_uphole_box(89.9375, 19)
 // arc9_uphole_box(89.9375, 0)
 
 function arc9_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-74.966+crossover+3.257
-	console.log(fin_len)
+	return fin_len
 }
 // arc9_uphole_pin(87.3125, 19)
 
 function arc9_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-110.19+crossover+3.417
-	console.log(fin_len)
+	return fin_len
 }
 // arc9_downhole_pin(127, 14.5)
 
 function arc9_downhole_box(rop2usc) {
 	var fin_len = rop2usc-110.19-1.678
-	console.log(fin_len)
+	return fin_len
 }
 // arc9_downhole_box(121)
 
@@ -144,22 +209,22 @@ function sonicscope_uphole_box(rop2usc, crossover) {
 	}else{
 		var fin_len = rop2usc-97.5+crossover-1.838
 	}
-	console.log(fin_len)
+	return fin_len
 }
 
 function sonicscope_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-97.5+crossover+3.257
-	console.log(fin_len)
+	return fin_len
 }
 
 function sonicscope_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-61.955+crossover+3.4
-	console.log(fin_len)
+	return fin_len
 }
 
 function sonicscope_downhole_box(rop2usc) {
 	var fin_len = rop2usc-61.955-1.678
-	console.log(fin_len)
+	return fin_len
 }
 
 
@@ -167,22 +232,22 @@ function sonicscope_downhole_box(rop2usc) {
 /* TELESCOPE IWOB */
 function telescope_iwob_uphole_box(rop2usc, crossover) {
 	var fin_len = rop2usc-227.25+crossover-1.838
-	console.log(fin_len)
+	return fin_len
 }
 
 function telescope_iwob_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-227.25+crossover+3.257
-	console.log(fin_len)
+	return fin_len
 }
 
 function telescope_iwob_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-44.25+crossover+3.4
-	console.log(fin_len)
+	return fin_len
 }
 
 function telescope_iwob_downhole_box(rop2usc) {
 	var fin_len = rop2usc-44.25-1.678
-	console.log(fin_len)
+	return fin_len
 }
 
 
@@ -192,22 +257,22 @@ function telescope_iwob_downhole_box(rop2usc) {
 /* TELESCOPE NON-IWOB */
 function telescope_non_iwob_uphole_box(rop2usc, crossover) {
 	var fin_len = rop2usc-227.25+crossover-1.838
-	console.log(fin_len)
+	return fin_len
 }
 
 function telescope_non_iwob_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-227.25+crossover+3.257
-	console.log(fin_len)
+	return fin_len
 }
 
 function telescope_non_iwob_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-20.25+crossover+3.4
-	console.log(fin_len)
+	return fin_len
 }
 
 function telescope_non_iwob_downhole_box(rop2usc) {
 	var fin_len = rop2usc-20.25-1.678
-	console.log(fin_len)
+	return fin_len
 }
 
 
@@ -219,34 +284,34 @@ function telescope_non_iwob_downhole_box(rop2usc) {
 /* GYROPULSE */
 function gyropulse_uphole_box(rop2usc, crossover) {
 	var fin_len = rop2usc-221.71+crossover-1.838
-	console.log(fin_len)
+	return fin_len
 }
 
 function gyropulse_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-221.71+crossover+3.257
-	console.log(fin_len)
+	return fin_len
 }
 
 function gyropulse_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-20.25+crossover+3.417
-	console.log(fin_len)
+	return fin_len
 }
 
 function gyropulse_downhole_box(rop2usc) {
 	var fin_len = rop2usc-20.25-1.678
-	console.log(fin_len)
+	return fin_len
 }
 
 
 /* VPWD */
 function vpwd_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-117.125+crossover+1.25
-	console.log(fin_len)
+	return fin_len
 }
 
 function vpwd_downhole_box(rop2usc) {
 	var fin_len = rop2usc-16
-	console.log(fin_len)
+	return fin_len
 }
 
 
@@ -254,7 +319,7 @@ function vpwd_downhole_box(rop2usc) {
 /* IMPULSE */
 function impulse_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-124.125+crossover+1.25
-	console.log(fin_len)
+	return fin_len
 }
 
 function impulse_downhole_box(rop2usc, crossover) {
@@ -263,7 +328,7 @@ function impulse_downhole_box(rop2usc, crossover) {
 	}else{
 		var fin_len = rop2usc+crossover-98.25
 	}
-	console.log(fin_len)
+	return fin_len
 }
 
 
@@ -271,7 +336,7 @@ function impulse_downhole_box(rop2usc, crossover) {
 /* GEOSPHERE RECEIVER */
 function geosphere_receiver_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-98.25+crossover+1.25
-	console.log(fin_len)
+	return fin_len
 }
 
 function geosphere_receiver_downhole_box(rop2usc, crossover) {
@@ -280,7 +345,7 @@ function geosphere_receiver_downhole_box(rop2usc, crossover) {
 	}else{
 		var fin_len = rop2usc-82.875+crossover-2
 	}
-	console.log(fin_len)
+	return fin_len
 }
 
 
@@ -288,7 +353,7 @@ function geosphere_receiver_downhole_box(rop2usc, crossover) {
 /* GEOSPHERE TRANSMITTER */
 function geosphere_transmitter_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-133.75+crossover+1.25
-	console.log(fin_len)
+	return fin_len
 }
 
 function geosphere_transmitter_downhole_box(rop2usc, crossover) {
@@ -297,7 +362,7 @@ function geosphere_transmitter_downhole_box(rop2usc, crossover) {
 	}else{
 		var fin_len = rop2usc-40.125+crossover-2
 	}
-	console.log(fin_len)
+	return fin_len
 }
 
 
@@ -311,20 +376,20 @@ function microscope675_uphole_box(rop2usc, crossover) {
 	}else{
 		var fin_len = rop2usc-57.9875-1.678+crossover
 	}
-	console.log(fin_len)
+	return fin_len
 }
 
 function microscope675_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-57.9875+crossover+3.257
-	console.log(fin_len)
+	return fin_len
 }
 
 function microscope675_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-95.5+crossover+3.417
-	console.log(fin_len)
+	return fin_len
 }
 
 function microscope675_downhole_box(rop2usc) {
 	var fin_len = rop2usc-95.5-1.678
-	console.log(fin_len)
+	return fin_len
 }
