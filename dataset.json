@@ -103,49 +103,49 @@
         },
         {
             "id": 10,
-            "name": "Microscope 4",
+            "name": "Microscope 475",
             "view": 0,
             "id_uphole": [8],
             "id_downhole": [14,15,16]
         },
         {
             "id": 11,
-            "name": "Microscope 6",
+            "name": "Microscope 675",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10]
         },
         {
             "id": 12,
-            "name": "Optidrill 6",
+            "name": "Optidrill 675",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [6,7,8,9,10]
         },
         {
             "id": 13,
-            "name": "Optidrill 9",
+            "name": "Optidrill 900",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [6,7,8,9,10]
         },
         {
             "id": 14,
-            "name": "Periscope 6",
+            "name": "Periscope 675",
             "view": 0,
             "id_uphole": [4,5,6,7],
             "id_downhole": [6,7,8,9,10]
         },
         {
             "id": 15,
-            "name": "Periscope 4",
+            "name": "Periscope 475",
             "view": 0,
             "id_uphole": [8],
             "id_downhole": [14,15,16]
         },
         {
             "id": 16,
-            "name": "Sonicscope 6",
+            "name": "Sonicscope 675",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [1,2,3,4,5,6,7,8,9,10]
