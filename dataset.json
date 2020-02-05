@@ -177,6 +177,27 @@
             "view": 0,
             "id_uphole": [1,2,3],
             "id_downhole": [11,12]
+        },
+        {
+            "id": 21,
+            "name": "Digiscope",
+            "view": 0,
+            "id_uphole": [9],
+            "id_downhole": [14,15,16]
+        },
+        {
+            "id": 22,
+            "name": "Stethoscope 4",
+            "view": 0,
+            "id_uphole": [8],
+            "id_downhole": [14,15,16]
+        },
+        {
+            "id": 23,
+            "name": "Stethoscope 6",
+            "view": 0,
+            "id_uphole": [1,2,3,4,5,6,7],
+            "id_downhole": [1,2,3,4,5,6,7,8,9,10]
         }
     ]
 }
