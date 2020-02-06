@@ -3,8 +3,6 @@ function renderTool() {
 		var option = document.createElement("option")
 		option.text = DATASET.tool[i].name
 		option.value = DATASET.tool[i].id
-		
-		// option.view = DATASET.tool[i].view
 		option.setAttribute('view', DATASET.tool[i].view)
 
 		document.getElementById("tool_selector").appendChild(option)
@@ -12,19 +10,75 @@ function renderTool() {
 }
 renderTool()
 
+function renderUpholePin() {
+	var option = document.createElement("option")
+	option.text = "PIN"
+	option.value = "pin"
 
-function renderHole(view) {
-	view = view.getAttribute("view")
-	if (view == 2) {
+	document.getElementById("up_connection").appendChild(option)
+}
+
+function renderUpholeBox() {
+	var option = document.createElement("option")
+	option.text = "BOX"
+	option.value = "box"
+
+	document.getElementById("up_connection").appendChild(option)
+}
+
+function renderDownholePin() {
+	var option = document.createElement("option")
+	option.text = "PIN"
+	option.value = "pin"
+
+	document.getElementById("down_connection").appendChild(option)
+}
+
+function renderDownholeBox() {
+	var option = document.createElement("option")
+	option.text = "BOX"
+	option.value = "box"
+
+	document.getElementById("down_connection").appendChild(option)
+}
+
+
+
+function renderHole(elem) {
+	tool_view = elem.getAttribute("view")
+	if (tool_view == 2) {
 		document.getElementById("uphole").style.display = "none"
 		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
-	}else if (view == 1) {
+	}else if (tool_view == 1) {
 		document.getElementById("uphole").style.display = "block"
 		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "HV to shoulder collar"
 	}else{
 		document.getElementById("uphole").style.display = "block"
 		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
 	}
+
+	var isUpholePin = typeof DATASET.tool.find(el => el.id === elem.value).uphole.pin
+	var isUpholeBox = typeof DATASET.tool.find(el => el.id === elem.value).uphole.box
+
+	var isDownholePin = typeof DATASET.tool.find(el => el.id === elem.value).downhole.pin
+	var isDownholeBox = typeof DATASET.tool.find(el => el.id === elem.value).downhole.box
+
+	if (isUpholePin) {
+		renderUpholePin()
+	}
+
+	if (isUpholeBox) {
+		renderUpholeBox()
+	}
+
+	if (isDownholePin) {
+		renderDownholePin()
+	}
+
+	if (isDownholeBox) {
+		renderDownholeBox()
+	}
+
 }
 
 function backAction() {
