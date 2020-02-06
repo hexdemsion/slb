@@ -45,7 +45,9 @@ function renderDownholeBox() {
 
 
 function renderHole(elem) {
-	tool_view = elem.getAttribute("view")
+	var tool_view = parseInt(elem.getAttribute("view"))
+	var tool_id = parseInt(elem.getAttribute("value"))
+
 	if (tool_view == 2) {
 		document.getElementById("uphole").style.display = "none"
 		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
@@ -57,26 +59,33 @@ function renderHole(elem) {
 		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
 	}
 
-	var isUpholePin = typeof DATASET.tool.find(el => el.id === elem.value).uphole.pin
-	var isUpholeBox = typeof DATASET.tool.find(el => el.id === elem.value).uphole.box
+	if (!isNaN(tool_id)) {
+		document.getElementById("up_connection").options.length = 0
+		document.getElementById("down_connection").options.length = 0
 
-	var isDownholePin = typeof DATASET.tool.find(el => el.id === elem.value).downhole.pin
-	var isDownholeBox = typeof DATASET.tool.find(el => el.id === elem.value).downhole.box
+		var isUpholePin = typeof DATASET.tool.find(el => el.id === tool_id).uphole.pin
+		var isUpholeBox = typeof DATASET.tool.find(el => el.id === tool_id).uphole.box
 
-	if (isUpholePin) {
-		renderUpholePin()
-	}
+		var isDownholePin = typeof DATASET.tool.find(el => el.id === tool_id).downhole.pin
+		var isDownholeBox = typeof DATASET.tool.find(el => el.id === tool_id).downhole.box
 
-	if (isUpholeBox) {
-		renderUpholeBox()
-	}
+		if (isUpholePin !== "undefined") {
+			renderUpholePin()
+		}
 
-	if (isDownholePin) {
-		renderDownholePin()
-	}
+		if (isUpholeBox !== "undefined") {
+			renderUpholeBox()
+		}
 
-	if (isDownholeBox) {
-		renderDownholeBox()
+		if (isDownholePin !== "undefined") {
+			renderDownholePin()
+		}
+
+		if (isDownholeBox !== "undefined") {
+			renderDownholeBox()
+		}
+	}else{
+		return
 	}
 
 }

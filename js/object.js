@@ -44,6 +44,7 @@ var DATASET = {
             "view": 2,
             "id_uphole": [],
             "id_downhole": [14,15,16],
+            "uphole": {},
             "downhole": {
                 "box": function(rop2usc, crossover){ return adn4_downhole_box(rop2usc, crossover) },
             }
@@ -221,7 +222,9 @@ var DATASET = {
             "name": "Periscope 675",
             "view": 0,
             "id_uphole": [4,5,6,7],
-            "id_downhole": [6,7,8,9,10]
+            "id_downhole": [6,7,8,9,10],
+            "uphole": {},
+            "downhole": {}
         },
         {
             "id": 15,
@@ -299,7 +302,9 @@ var DATASET = {
             "name": "Sonicvision",
             "view": 0,
             "id_uphole": [1,2,3],
-            "id_downhole": [11,12]
+            "id_downhole": [11,12],
+            "uphole": {},
+            "downhole": {}
         },
         {
             "id": 21,
