@@ -7,9 +7,6 @@
   <meta name="description" content="Schlumberger Extender Calculator">
   <meta name="author" content="Andreawan Bagoes">
 
-  <!-- <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png"> -->
-
   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
   <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-touch-icon-57x57.png" />
@@ -39,6 +36,7 @@
   </div>
   <br><br>
 
+<!-- FORM ELEMENT -->
   <div class="container" id="form_wrapper" style="display: block;">
     <div class="row">
       <div class="col-xs-0 offset-xs-0 col-sm-6 offset-sm-3" style="border: 0px solid red;">
@@ -95,44 +93,73 @@
     </div>
   </div>
 
+<!-- BELOW IS RESULT ELEMENT -->
 
-  <div class="container" id="result_wrapper" style="display: none">
+  <div class="container" id="result_wrapper" style="display: block;">
     <div class="row">
       <div class="col-xs-0 offset-xs-0 col-sm-6 offset-sm-3" style="border: 0px solid red;">
         <section>
-          <h4>Tool</h4>
           <div>
-            <h5>Ecoscope</h5>
+            <h3 id="res_tool_name"></h3>
           </div>
           <br>
-          <div id="uphole">
-            <h4>Uphole</h4>
-            <div>
-              <h5>ROP to shoulder collar: 233</h5>
-            </div>
-            <div>
-              <h5>Crossover: 14.5</h5>
-            </div>
-            <div>
-              <h5>Connection end: PIN</h5>
-            </div>
+          <div id="res_uphole">
+            <h4><b>Uphole</b></h4>
+            <form>
+              <div class="form-row">
+                <div class="col-sm-12">
+                  <p style="margin-top: 20px">Payload</p>
+                  <table class="table table-bordered table-sm" style="text-align: center">
+                    <thead>
+                      <tr>
+                        <th scope="col">Connection</th>
+                        <th scope="col">ROP</th>
+                        <th scope="col">Crossover</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span id="up_res_conn"></span></td>
+                        <td><span id="up_res_rop2usc"></span> inch</td>
+                        <td><span id="up_res_crossover"></span> inch</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col-xs-12" style="width: 100%">
+                  <label for="up_fin_len_res">Final length</label>
+                  <input type="text" class="form-control is-valid" id="up_fin_len_res" value="" readonly>
+                  <div class="valid-feedback" id="up_valid_comment">
+                    Extender can be adjusted without crossover added, please check with gauges after installation
+                  </div>
+                  <div class="invalid-feedback" id="up_invalid_comment">
+                    Your extender can’t be adjusted, please check collar and crossover length
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col-xs-12">
+                  <p>Available extender</p>
+                  <ul id="up_res_invalid_ext" style="display: none;"><li id="up_res_invalid_ext_text"></li></ul>
+                  <ol id="up_res_ext_list"></ol>
+                </div>
+              </div>
+            </form>
           </div>
-          <br>
-          <div id="downhole">
-            <h4>Downhole</h4>
-            <div>
-              <h5>ROP to shoulder collar: 69.225</h5>
-            </div>
-            <div>
-              <h5>Crossover: 0</h5>
-            </div>
-            <div>
-              <h5>Connection end: BOX</h5>
-            </div>
-          </div>
+
+
+
+          <!-- Downhole result will be here -->          
+
+
+
           <br>
           <div>
-            <button class="form-control btn btn-success" type="button" onclick="backAction()">Back</button>
+            <button class="form-control btn btn-info" type="button" onclick="backAction()">Back</button>
           </div>
         </section>
       </div>

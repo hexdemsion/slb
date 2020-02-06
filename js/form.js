@@ -126,8 +126,6 @@ function doCalculate() {
 	req.hole.downhole.rop2usc = parseInt(document.getElementById("down_rop2usc").value)
 	req.hole.downhole.crossover = parseInt(document.getElementById("down_crossover").value)
 
-	console.log(req)
-
 	if (req.hole.uphole.conn == "pin") {
 		if (req.hole.uphole.crossover < 1 || isNaN(req.hole.uphole.crossover)) {
 			alert("Uphole PIN require Crossover value")
@@ -150,10 +148,81 @@ function doCalculate() {
 
 	console.log(res_uphole, res_downhole)
 
+	
+	// Uphole result section
+	document.getElementById("res_tool_name").innerHTML = DATASET.tool.find(el => el.id === req.id_tool).name
+
+	document.getElementById("up_res_conn").innerHTML = req.hole.uphole.conn.toUpperCase()
+	document.getElementById("up_res_rop2usc").innerHTML = req.hole.uphole.rop2usc
+	document.getElementById("up_res_crossover").innerHTML = req.hole.uphole.crossover
+
+	document.getElementById("up_fin_len_res").value = res_uphole.fin_len+" inch"
+
+	var comment_list = [
+		"Extender can be adjusted without crossover added, please check with gauges after installation",
+		"Your extender can’t be adjusted, please check collar and crossover length",
+		"Your extender can’t be adjusted, please check collar length",
+		"Extender can be adjusted, please check with gauges after installation",
+		"There is no available extender type with this result"
+	]
+
+	if (res_uphole.extender.final_ext.length > 0 && req.hole.uphole.crossover == 0) {
+		var valid_comment = comment_list[0]
+	}else if(res_uphole.extender.final_ext.length > 0 && req.hole.uphole.crossover > 0) {
+		var valid_comment = comment_list[3]
+	}
+
+	if (res_uphole.extender.final_ext.length == 0 && req.hole.uphole.crossover == 0) {
+		var invalid_comment = comment_list[2]
+	}else if(res_uphole.extender.final_ext.length == 0 && req.hole.uphole.crossover > 0) {
+		var invalid_comment = comment_list[1]
+	}
+
+	if (res_uphole.extender.final_ext.length > 0) {
+		document.getElementById("up_res_invalid_ext").style.display = "none"
+	}else{
+		document.getElementById("up_res_invalid_ext").style.display = "block"
+	}
+	
+	// this comment can be modified later, 
+	// if we need to know the result is 
+	// below or beyond the limit
+	document.getElementById("up_res_invalid_ext_text").innerHTML = comment_list[4] 
+
+	document.getElementById("up_valid_comment").innerHTML = valid_comment
+	document.getElementById("up_invalid_comment").innerHTML = invalid_comment
+
+
+	// clean all list before writing new result
+	document.getElementById("up_res_ext_list").innerHTML = ""
+
+	// iterate available extender
+	for (var i = 0; i < res_uphole.extender.final_ext.length; i++) {
+		var cur_ext = res_uphole.extender.final_ext[i]
+
+		var node = document.createElement("li")
+
+		// check if extender are ext 2.5"
+		if (cur_ext.tolerance == 0) {
+			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
+		}else{
+			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", with ext 2.5"'
+		}
+
+		// append the element
+		var textnode = document.createTextNode(ext_type_string)
+		node.appendChild(textnode)
+		document.getElementById("up_res_ext_list").appendChild(node)
+	}
+
+
+
+
+
+
+
+
+
 	// document.getElementById("form_wrapper").style.display = "none"
 	document.getElementById("result_wrapper").style.display = "block"
 }
-
-
-// console.log(ecoscope_uphole_box(233, 14.5))
-// console.log(optidrill900_downhole_pin(45, 14.5))
