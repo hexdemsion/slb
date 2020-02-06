@@ -42,7 +42,15 @@ function renderDownholeBox() {
 	document.getElementById("down_connection").appendChild(option)
 }
 
-
+function getParamFromFun(func) {
+	var STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg
+	var ARGUMENT_NAMES = /([^\s,]+)/g
+	var fnStr = func.toString().replace(STRIP_COMMENTS, '')
+	var result = fnStr.slice(fnStr.indexOf('(')+1, fnStr.indexOf(')')).match(ARGUMENT_NAMES)
+	if(result === null)
+		result = []
+	return result
+}
 
 function renderHole(elem) {
 	var tool_view = parseInt(elem.getAttribute("view"))
@@ -60,6 +68,8 @@ function renderHole(elem) {
 	}
 
 	if (!isNaN(tool_id)) {
+		document.getElementById("calc_btn").disabled = false
+
 		document.getElementById("up_connection").options.length = 0
 		document.getElementById("down_connection").options.length = 0
 
@@ -85,6 +95,7 @@ function renderHole(elem) {
 			renderDownholeBox()
 		}
 	}else{
+		document.getElementById("calc_btn").disabled = true
 		return
 	}
 
@@ -97,9 +108,6 @@ function backAction() {
 }
 
 function doCalculate() {
-	// document.getElementById("form_wrapper").style.display = "none"
-	document.getElementById("result_wrapper").style.display = "block"
-
 	var req = {
 	    "id_tool": null,
 	    "hole": {
@@ -118,13 +126,23 @@ function doCalculate() {
 	req.hole.downhole.rop2usc = parseInt(document.getElementById("down_rop2usc").value)
 	req.hole.downhole.crossover = parseInt(document.getElementById("down_crossover").value)
 
+	console.log(req)
+
 	if (req.hole.uphole.conn == "pin") {
+		if (req.hole.uphole.crossover < 1 || isNaN(req.hole.uphole.crossover)) {
+			alert("Uphole PIN require Crossover value")
+			return
+		}
 		var res_uphole = DATASET.tool.find(el => el.id === req.id_tool).uphole.pin(req.hole.uphole.rop2usc, req.hole.uphole.crossover)
 	}else if (req.hole.uphole.conn == "box") {
 		var res_uphole = DATASET.tool.find(el => el.id === req.id_tool).uphole.box(req.hole.uphole.rop2usc, req.hole.uphole.crossover)
 	}
 
 	if (req.hole.downhole.conn == "pin") {
+		if (req.hole.downhole.crossover < 1 || isNaN(req.hole.downhole.crossover)) {
+			alert("Downhole PIN require Crossover value")
+			return
+		}
 		var res_downhole = DATASET.tool.find(el => el.id === req.id_tool).downhole.pin(req.hole.downhole.rop2usc, req.hole.downhole.crossover)
 	}else if (req.hole.downhole.conn == "box") {
 		var res_downhole = DATASET.tool.find(el => el.id === req.id_tool).downhole.box(req.hole.downhole.rop2usc, req.hole.downhole.crossover)
@@ -132,6 +150,8 @@ function doCalculate() {
 
 	console.log(res_uphole, res_downhole)
 
+	// document.getElementById("form_wrapper").style.display = "none"
+	document.getElementById("result_wrapper").style.display = "block"
 }
 
 
