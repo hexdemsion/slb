@@ -148,16 +148,26 @@ function doCalculate() {
 
 	console.log(res_uphole, res_downhole)
 
-	
-	// Uphole result section
+	renderResultUphole(req, res_uphole)
+
+	document.getElementById("form_wrapper").style.display = "none"
+	document.getElementById("result_wrapper").style.display = "block"
+}
+
+
+function renderResultUphole(req, res_uphole) {
+	// Set tool name in result header
 	document.getElementById("res_tool_name").innerHTML = DATASET.tool.find(el => el.id === req.id_tool).name
 
+	// Pass requested value in form to table
 	document.getElementById("up_res_conn").innerHTML = req.hole.uphole.conn.toUpperCase()
 	document.getElementById("up_res_rop2usc").innerHTML = req.hole.uphole.rop2usc
 	document.getElementById("up_res_crossover").innerHTML = req.hole.uphole.crossover
 
+	// Write final result to result form
 	document.getElementById("up_fin_len_res").value = res_uphole.fin_len+" inch"
 
+	// This list will used based on extender result and crossover
 	var comment_list = [
 		"Extender can be adjusted without crossover added, please check with gauges after installation",
 		"Your extender can’t be adjusted, please check collar and crossover length",
@@ -166,32 +176,41 @@ function doCalculate() {
 		"There is no available extender type with this result"
 	]
 
+	// Clearing bootstrap-validation class
+	document.getElementById("up_fin_len_res").classList.remove("is-valid")
+	document.getElementById("up_fin_len_res").classList.remove("is-invalid")
+
+	// extender not exist, dont care if crossover exist or not
+	if (res_uphole.extender.final_ext.length > 0) {
+		document.getElementById("up_res_invalid_ext").style.display = "none"
+		document.getElementById("up_fin_len_res").classList.add("is-valid")
+	}else{
+		document.getElementById("up_res_invalid_ext").style.display = "block"
+		document.getElementById("up_fin_len_res").classList.add("is-invalid")
+	}
+
+	// extender exist, but check crossover exist or not
 	if (res_uphole.extender.final_ext.length > 0 && req.hole.uphole.crossover == 0) {
 		var valid_comment = comment_list[0]
 	}else if(res_uphole.extender.final_ext.length > 0 && req.hole.uphole.crossover > 0) {
 		var valid_comment = comment_list[3]
 	}
 
+	// extender not exist, and check crossover exist or not
 	if (res_uphole.extender.final_ext.length == 0 && req.hole.uphole.crossover == 0) {
 		var invalid_comment = comment_list[2]
 	}else if(res_uphole.extender.final_ext.length == 0 && req.hole.uphole.crossover > 0) {
 		var invalid_comment = comment_list[1]
 	}
 
-	if (res_uphole.extender.final_ext.length > 0) {
-		document.getElementById("up_res_invalid_ext").style.display = "none"
-	}else{
-		document.getElementById("up_res_invalid_ext").style.display = "block"
-	}
-	
 	// this comment can be modified later, 
 	// if we need to know the result is 
 	// below or beyond the limit
 	document.getElementById("up_res_invalid_ext_text").innerHTML = comment_list[4] 
 
+	// set selected comment from above to element
 	document.getElementById("up_valid_comment").innerHTML = valid_comment
 	document.getElementById("up_invalid_comment").innerHTML = invalid_comment
-
 
 	// clean all list before writing new result
 	document.getElementById("up_res_ext_list").innerHTML = ""
@@ -214,15 +233,4 @@ function doCalculate() {
 		node.appendChild(textnode)
 		document.getElementById("up_res_ext_list").appendChild(node)
 	}
-
-
-
-
-
-
-
-
-
-	// document.getElementById("form_wrapper").style.display = "none"
-	document.getElementById("result_wrapper").style.display = "block"
 }
