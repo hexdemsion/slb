@@ -111,20 +111,20 @@ function doCalculate() {
 	var req = {
 	    "id_tool": null,
 	    "hole": {
-	    	"uphole": {"conn": null, "rop2usc": null, "crossover": null},
-	    	"downhole": {"conn": null, "rop2usc": null, "crossover": null}
+	    	"uphole": {"conn": null, "rop2usc": "", "crossover": ""},
+	    	"downhole": {"conn": null, "rop2usc": "", "crossover": ""}
 	    }
 	}	
 
 	req.id_tool = parseInt(document.getElementById("tool_selector").value)
 
 	req.hole.uphole.conn = document.getElementById("up_connection").value
-	req.hole.uphole.rop2usc = parseInt(document.getElementById("up_rop2usc").value)
-	req.hole.uphole.crossover = parseInt(document.getElementById("up_crossover").value)
+	req.hole.uphole.rop2usc = parseFloat(document.getElementById("up_rop2usc").value)
+	req.hole.uphole.crossover = parseFloat(document.getElementById("up_crossover").value)
 
 	req.hole.downhole.conn = document.getElementById("down_connection").value
-	req.hole.downhole.rop2usc = parseInt(document.getElementById("down_rop2usc").value)
-	req.hole.downhole.crossover = parseInt(document.getElementById("down_crossover").value)
+	req.hole.downhole.rop2usc = parseFloat(document.getElementById("down_rop2usc").value)
+	req.hole.downhole.crossover = parseFloat(document.getElementById("down_crossover").value)
 
 	if (req.hole.uphole.conn == "pin") {
 		if (req.hole.uphole.crossover < 1 || isNaN(req.hole.uphole.crossover)) {
