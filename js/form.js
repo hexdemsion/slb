@@ -330,3 +330,36 @@ function renderResultDownhole(req, res_downhole) {
 		document.getElementById("down_res_ext_list").appendChild(node)
 	}
 }
+
+
+// This function will trigger from button in page 
+// But be careful when triggering this function. 
+// Because you will need an internet connection
+// to download the new version from server.
+// So consider this when you are in offshore rig
+// or isolated places that dont have an internet connection
+
+function resetSW() {
+	alert("This will delete local app data. Don't do this if you are in offshore rig or if you don't have an internet connection.")
+	var user_resp = confirm("Are you want to delete ?")
+	if (!user_resp) {
+		return
+	}
+
+	// Delete registered ServiceWorker javascript file in devices
+	navigator.serviceWorker.getRegistrations().then(function(registrations) {
+		for(let registration of registrations) {
+			registration.unregister()
+		} 
+	})
+
+	// Delete all caches that were installed
+	caches.delete("calc_schlumberger")
+
+	alert("Local data has been deleted. Connect to internet then refresh the page to download a new version.")
+}
+
+
+function resetForm() {
+	document.getElementById("calc_form").reset()
+}

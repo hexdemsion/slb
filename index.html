@@ -26,6 +26,19 @@
 <body style="padding: 20px 0">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #003365">
     <a class="navbar-brand" href="./"><img src="./img/logo-white.png" style="width: 160px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="resetSW()">Clear cache</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="resetForm()">Reset form</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 
 
@@ -35,8 +48,8 @@
       <div class="col-md-12">
         <center>
           <h1 style="font-size: 24px; margin-bottom: 0px;"><b>Extender calculation apps</b></h1>
-<!--           <h1 style="font-size: 26px; margin-bottom: 0px;"><b>Engineering Department</b></h1>
-          <p style="font-size: 19px; margin-top: 0px;" class="text-muted">Extender calculation apps</p> -->
+          <!-- <h1 style="font-size: 26px; margin-bottom: 0px;"><b>Engineering Department</b></h1> -->
+          <!-- <p style="font-size: 19px; margin-top: 0px;" class="text-muted">Extender calculation apps</p> -->
         </center>
       </div>
     </div>
@@ -222,6 +235,9 @@
 <script src="./js/form.js"></script>
 <script>
 if('serviceWorker' in navigator) {
+  // This will triggered every time user refresh the page
+  // once registered, the list URL in sw.js cache.addAll
+  // will placed in local cache storage 
   navigator.serviceWorker.register('./sw.js').then(function(registration) { 
     console.log("Service Worker Registered") 
   })
