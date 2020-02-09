@@ -102,7 +102,7 @@ function renderHole(elem) {
 }
 
 function backAction() {
-	document.getElementById("calc_form").reset()
+	// document.getElementById("calc_form").reset()
 	document.getElementById("form_wrapper").style.display = "block"
 	document.getElementById("result_wrapper").style.display = "none"
 }
@@ -111,8 +111,8 @@ function doCalculate() {
 	var req = {
 	    "id_tool": null,
 	    "hole": {
-	    	"uphole": {"conn": null, "rop2usc": "", "crossover": ""},
-	    	"downhole": {"conn": null, "rop2usc": "", "crossover": ""}
+	    	"uphole": {"conn": null, "rop2usc": null, "crossover": null},
+	    	"downhole": {"conn": null, "rop2usc": null, "crossover": null}
 	    }
 	}	
 
@@ -148,7 +148,15 @@ function doCalculate() {
 
 	console.log(res_uphole, res_downhole)
 
-	renderResultUphole(req, res_uphole)
+	// Since ADN 4 doesn't have uphole, so it will hide the uphole result 
+	if (req.id_tool == 1) {
+		document.getElementById("res_uphole").style.display = "none"
+	}else{
+		renderResultUphole(req, res_uphole)
+		document.getElementById("res_uphole").style.display = "block"
+	}
+
+	renderResultDownhole(req, res_downhole)
 
 	document.getElementById("form_wrapper").style.display = "none"
 	document.getElementById("result_wrapper").style.display = "block"
@@ -164,6 +172,13 @@ function renderResultUphole(req, res_uphole) {
 	document.getElementById("up_res_rop2usc").innerHTML = req.hole.uphole.rop2usc
 	document.getElementById("up_res_crossover").innerHTML = req.hole.uphole.crossover
 
+	// Switching between ROP / HV for impulse tool 
+	if (req.id_tool == 9) {
+		document.getElementById("up_collar_identifier").innerHTML = "HV"
+	}else{
+		document.getElementById("up_collar_identifier").innerHTML = "ROP"
+	}
+
 	// Write final result to result form
 	document.getElementById("up_fin_len_res").value = res_uphole.fin_len+" inch"
 
@@ -173,7 +188,7 @@ function renderResultUphole(req, res_uphole) {
 		"Your extender can’t be adjusted, please check collar and crossover length",
 		"Your extender can’t be adjusted, please check collar length",
 		"Extender can be adjusted, please check with gauges after installation",
-		"There is no available extender type with this result"
+		"There is no match extender type with this result"
 	]
 
 	// Clearing bootstrap-validation class
@@ -232,5 +247,86 @@ function renderResultUphole(req, res_uphole) {
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
 		document.getElementById("up_res_ext_list").appendChild(node)
+	}
+}
+
+
+function renderResultDownhole(req, res_downhole) {
+	// Set tool name in result header
+	document.getElementById("res_tool_name").innerHTML = DATASET.tool.find(el => el.id === req.id_tool).name
+
+	// Pass requested value in form to table
+	document.getElementById("down_res_conn").innerHTML = req.hole.downhole.conn.toUpperCase()
+	document.getElementById("down_res_rop2usc").innerHTML = req.hole.downhole.rop2usc
+	document.getElementById("down_res_crossover").innerHTML = req.hole.downhole.crossover
+
+	// Write final result to result form
+	document.getElementById("down_fin_len_res").value = res_downhole.fin_len+" inch"
+
+	// This list will used based on extender result and crossover
+	var comment_list = [
+		"Extender can be adjusted without crossover added, please check with gauges after installation",
+		"Your extender can’t be adjusted, please check collar and crossover length",
+		"Your extender can’t be adjusted, please check collar length",
+		"Extender can be adjusted, please check with gauges after installation",
+		"There is no match extender type with this result"
+	]
+
+	// Clearing bootstrap-validation class
+	document.getElementById("down_fin_len_res").classList.remove("is-valid")
+	document.getElementById("down_fin_len_res").classList.remove("is-invalid")
+
+	// extender not exist, dont care if crossover exist or not
+	if (res_downhole.extender.final_ext.length > 0) {
+		document.getElementById("down_res_invalid_ext").style.display = "none"
+		document.getElementById("down_fin_len_res").classList.add("is-valid")
+	}else{
+		document.getElementById("down_res_invalid_ext").style.display = "block"
+		document.getElementById("down_fin_len_res").classList.add("is-invalid")
+	}
+
+	// extender exist, but check crossover exist or not
+	if (res_downhole.extender.final_ext.length > 0 && req.hole.downhole.crossover == 0) {
+		var valid_comment = comment_list[0]
+	}else if(res_downhole.extender.final_ext.length > 0 && req.hole.downhole.crossover > 0) {
+		var valid_comment = comment_list[3]
+	}
+
+	// extender not exist, and check crossover exist or not
+	if (res_downhole.extender.final_ext.length == 0 && req.hole.downhole.crossover == 0) {
+		var invalid_comment = comment_list[2]
+	}else if(res_downhole.extender.final_ext.length == 0 && req.hole.downhole.crossover > 0) {
+		var invalid_comment = comment_list[1]
+	}
+
+	// this comment can be modified later, 
+	// if we need to know the result is 
+	// below or beyond the limit
+	document.getElementById("down_res_invalid_ext_text").innerHTML = comment_list[4] 
+
+	// set selected comment from above to element
+	document.getElementById("down_valid_comment").innerHTML = valid_comment
+	document.getElementById("down_invalid_comment").innerHTML = invalid_comment
+
+	// clean all list before writing new result
+	document.getElementById("down_res_ext_list").innerHTML = ""
+
+	// iterate available extender
+	for (var i = 0; i < res_downhole.extender.final_ext.length; i++) {
+		var cur_ext = res_downhole.extender.final_ext[i]
+
+		var node = document.createElement("li")
+
+		// check if extender are ext 2.5"
+		if (cur_ext.tolerance == 0) {
+			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
+		}else{
+			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", with ext 2.5"'
+		}
+
+		// append the element
+		var textnode = document.createTextNode(ext_type_string)
+		node.appendChild(textnode)
+		document.getElementById("down_res_ext_list").appendChild(node)
 	}
 }

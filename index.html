@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Schlumberger Extender Calculator">
-  <meta name="author" content="Andreawan Bagoes">
+  <meta name="author" content="Ahmad Malhadi, Andreawan Bagoes">
 
   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
@@ -34,7 +34,9 @@
     <div class="row">
       <div class="col-md-12">
         <center>
-          <h1 style="font-size: 24px; margin-bottom: 0px;"><b>Extender calculation apps</b></h1>
+          <!-- <h1 style="font-size: 24px; margin-bottom: 0px;"><b>Extender calculation apps</b></h1> -->
+          <h1 style="font-size: 26px; margin-bottom: 0px;"><b>Engineering Department</b></h1>
+          <p style="font-size: 19px; margin-top: 0px;" class="text-muted">Extender calculation apps</p>
         </center>
       </div>
     </div>
@@ -105,7 +107,8 @@
       <div class="col-xs-0 offset-xs-0 col-sm-6 offset-sm-3" style="border: 0px solid red;">
         <section>
           <div>
-            <h3 id="res_tool_name"></h3>
+            <h4><b>Tool</b></h4>
+            <h5 id="res_tool_name"></h5>
           </div>
           <br>
           <div id="res_uphole">
@@ -118,7 +121,7 @@
                     <thead>
                       <tr>
                         <th scope="col">Connection</th>
-                        <th scope="col">ROP</th>
+                        <th scope="col" id="up_collar_identifier"></th>
                         <th scope="col">Crossover</th>
                       </tr>
                     </thead>
@@ -150,13 +153,53 @@
                 </div>
               </div>
             </form>
+          <br><br>
           </div>
 
-
-
-          <!-- Downhole result will be here -->          
-
-
+          <!-- Downhole result will be here -->
+          <div id="res_downhole">
+            <h4><b>Downhole</b></h4>
+            <form>
+              <div class="form-row">
+                <div class="col-sm-12">
+                  <p style="margin-top: 20px">Payload</p>
+                  <table class="table table-bordered table-sm" style="text-align: center">
+                    <thead>
+                      <tr>
+                        <th scope="col">Connection</th>
+                        <th scope="col">ROP</th>
+                        <th scope="col">Crossover</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span id="down_res_conn"></span></td>
+                        <td><span id="down_res_rop2usc"></span> inch</td>
+                        <td><span id="down_res_crossover"></span> inch</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col-xs-12" style="width: 100%">
+                  <label for="down_fin_len_res">Final length</label>
+                  <input type="text" class="form-control" id="down_fin_len_res" value="" readonly>
+                  <div class="valid-feedback" id="down_valid_comment"></div>
+                  <div class="invalid-feedback" id="down_invalid_comment"></div>
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col-xs-12">
+                  <p>Available extender</p>
+                  <ul id="down_res_invalid_ext" style="display: none;"><li id="down_res_invalid_ext_text"></li></ul>
+                  <ol id="down_res_ext_list"></ol>
+                </div>
+              </div>
+            </form>
+          </div>
 
           <br>
           <div>
@@ -169,13 +212,24 @@
 
 
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="./js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="./js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="./js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="./js/object.js"></script>
-  <script src="./js/formula.js"></script>
-  <script src="./js/form.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="./js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="./js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./js/object.js"></script>
+<script src="./js/formula.js"></script>
+<script src="./js/form.js"></script>
+<script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').then(function(registration) { 
+    console.log("Service Worker Registered") 
+  })
+
+  navigator.serviceWorker.ready.then(function(registration) {
+    console.log('Service Worker Ready')
+  })
+}
+</script>
 </body>
 </html>
