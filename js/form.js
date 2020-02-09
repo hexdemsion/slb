@@ -240,7 +240,7 @@ function renderResultUphole(req, res_uphole) {
 		if (cur_ext.tolerance == 0) {
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}else{
-			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", with ext 2.5"'
+			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}
 
 		// append the element
@@ -321,7 +321,7 @@ function renderResultDownhole(req, res_downhole) {
 		if (cur_ext.tolerance == 0) {
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}else{
-			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", with ext 2.5"'
+			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}
 
 		// append the element
