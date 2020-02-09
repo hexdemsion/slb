@@ -9,11 +9,12 @@ function get_extender_type(id_tool, hole, fin_len) {
 			var tool = DATASET.extender.type.uphole.find(el => el.id === hole_list[i])
 			linked_ext.push(tool)
 
+			if (tool.tolerance > 0 && (fin_len-tool.max)*(fin_len-tool.tolerance)<0) {
+				final_ext.push(tool)
+			}
+			
 			if ((fin_len-tool.min)*(fin_len-tool.max)<0) {
 				final_ext.push(tool)
-				if (tool.tolerance > 0 && (fin_len-tool.max)*(fin_len-tool.tolerance)<0) {
-					final_ext.push(tool)
-				}
 			}
 		}
 		return {"final_ext": final_ext, "linked_ext": linked_ext}
@@ -28,11 +29,12 @@ function get_extender_type(id_tool, hole, fin_len) {
 			var tool = DATASET.extender.type.downhole.find(el => el.id === hole_list[i])
 			linked_ext.push(tool)
 
+			if (tool.tolerance > 0 && (fin_len-tool.max)*(fin_len-tool.tolerance)<0) {
+				final_ext.push(tool)
+			}
+
 			if ((fin_len-tool.min)*(fin_len-tool.max)<0) {
 				final_ext.push(tool)
-				if (tool.tolerance > 0 && (fin_len-tool.max)*(fin_len-tool.tolerance)<0) {
-					final_ext.push(tool)
-				}
 			}
 		}
 		return {"final_ext": final_ext, "linked_ext": linked_ext}
