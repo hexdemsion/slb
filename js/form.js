@@ -237,8 +237,8 @@ function renderResultUphole(req, res_uphole) {
 		var node = document.createElement("li")
 
 		// check if extender are ext 2.5"
-		if (cur_ext.tolerance == 0) {
-			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
+		if (cur_ext.isExt) {
+			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", with ext 2.5"'
 		}else{
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}
@@ -318,8 +318,8 @@ function renderResultDownhole(req, res_downhole) {
 		var node = document.createElement("li")
 
 		// check if extender are ext 2.5"
-		if (cur_ext.tolerance == 0) {
-			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
+		if (cur_ext.isExt) {
+			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", with ext 2.5"'
 		}else{
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}
