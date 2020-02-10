@@ -249,6 +249,9 @@ function renderResultUphole(req, res_uphole) {
 		document.getElementById("up_res_ext_list").appendChild(node)
 	}
 
+	// clean all list before writing new result
+	document.getElementById("up_res_ext_list_linked").innerHTML = ""
+
 	// iterate available extender
 	for (var i = 0; i < res_uphole.extender.linked_ext.length; i++) {
 		var cur_ext = res_uphole.extender.linked_ext[i]
@@ -342,6 +345,9 @@ function renderResultDownhole(req, res_downhole) {
 		node.appendChild(textnode)
 		document.getElementById("down_res_ext_list").appendChild(node)
 	}
+
+	// clean all list before writing new result
+	document.getElementById("down_res_ext_list_linked").innerHTML = ""
 
 	// iterate available extender
 	for (var i = 0; i < res_downhole.extender.linked_ext.length; i++) {
