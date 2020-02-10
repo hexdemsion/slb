@@ -245,6 +245,10 @@ function renderResultUphole(req, res_uphole) {
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}
 
+		if (cur_ext.require_crossover) {
+			ext_type_string += " (require crossover)"
+		}
+
 		// append the element
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
@@ -260,6 +264,10 @@ function renderResultUphole(req, res_uphole) {
 
 		var node = document.createElement("li")
 		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
+
+		if (cur_ext.require_crossover) {
+			ext_type_string += " (require crossover)"
+		}
 
 		// append the element
 		var textnode = document.createTextNode(ext_type_string)
@@ -344,6 +352,10 @@ function renderResultDownhole(req, res_downhole) {
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}
 
+		if (cur_ext.require_crossover) {
+			ext_type_string += " (require crossover)"
+		}
+
 		// append the element
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
@@ -359,6 +371,10 @@ function renderResultDownhole(req, res_downhole) {
 
 		var node = document.createElement("li")
 		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
+
+		if (cur_ext.require_crossover) {
+			ext_type_string += " (require crossover)"
+		}
 
 		// append the element
 		var textnode = document.createTextNode(ext_type_string)

@@ -2,38 +2,38 @@ var DATASET = {
     "extender": {
         "type": {
             "uphole": [
-            	{"id": 1, "name": "MEXM-BA", "min": 28.13, "max": 31.65, "tolerance": 0}, 
-            	{"id": 2, "name": "MEXM-AA", "min": 31.63, "max": 35.15, "tolerance": 0}, 
-            	{"id": 3, "name": "MEXM-DA", "min": 34.13, "max": 37.65, "tolerance": 0}, 
+            	{"id": 1, "name": "MEXM-BA", "min": 28.13, "max": 31.65, "tolerance": 0, "require_crossover": true}, 
+            	{"id": 2, "name": "MEXM-AA", "min": 31.63, "max": 35.15, "tolerance": 0, "require_crossover": true}, 
+            	{"id": 3, "name": "MEXM-DA", "min": 34.13, "max": 37.65, "tolerance": 0, "require_crossover": true}, 
 
-            	{"id": 4, "name": "EXTM-CB", "min": 11.25, "max": 13.75, "tolerance": 0}, 
-            	{"id": 5, "name": "EXTM-BB", "min": 13.37, "max": 15.87, "tolerance": 0}, 
-            	{"id": 6, "name": "EXTM-FA", "min": 15.49, "max": 17.99, "tolerance": 0}, 
-            	{"id": 7, "name": "EXTM-GB", "min": 17.58, "max": 20.14, "tolerance": 0}, 
+            	{"id": 4, "name": "EXTM-CB", "min": 11.25, "max": 13.75, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 5, "name": "EXTM-BB", "min": 13.37, "max": 15.87, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 6, "name": "EXTM-FA", "min": 15.49, "max": 17.99, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 7, "name": "EXTM-GB", "min": 17.58, "max": 20.14, "tolerance": 0, "require_crossover": false}, 
             	
-            	{"id": 8, "name": "RTLM-CC", "min": 29.54, "max": 32.28, "tolerance": 0}, 
-            	{"id": 9, "name": "RTLM-BD", "min": 39.28, "max": 42.02, "tolerance": 0}
+            	{"id": 8, "name": "RTLM-CC", "min": 29.54, "max": 32.28, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 9, "name": "RTLM-BD", "min": 39.28, "max": 42.02, "tolerance": 0, "require_crossover": false}
             ],
             "downhole": [
-            	{"id": 1, "name": "EXTF-AA", "min": 12.82, "max": 15.16, "tolerance": 0}, 
-            	{"id": 2, "name": "EXTF-BA", "min": 10.41, "max": 12.75, "tolerance": 0}, 
-            	{"id": 3, "name": "EXTF-CA", "min": 8.06, "max": 10.40, "tolerance": 0}, 
-            	{"id": 4, "name": "EXTF-DA", "min": 12.82, "max": 15.16, "tolerance": 0}, 
-            	{"id": 5, "name": "EXTF-DB", "min": 12.82, "max": 15.16, "tolerance": 0}, 
+            	{"id": 1, "name": "EXTF-AA", "min": 12.82, "max": 15.16, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 2, "name": "EXTF-BA", "min": 10.41, "max": 12.75, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 3, "name": "EXTF-CA", "min": 8.06, "max": 10.40, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 4, "name": "EXTF-DA", "min": 12.82, "max": 15.16, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 5, "name": "EXTF-DB", "min": 12.82, "max": 15.16, "tolerance": 0, "require_crossover": false}, 
             	
-            	{"id": 6, "name": "MEXD-GA", "min": 22.36, "max": 24.36, "tolerance": 26.86}, 
-            	{"id": 7, "name": "MEXD-DB", "min": 25.36, "max": 27.76, "tolerance": 30.26}, 
-            	{"id": 8, "name": "MEXD-BA", "min": 27.82, "max": 30.16, "tolerance": 32.66}, 
-            	{"id": 9, "name": "MEXD-CB", "min": 30.22, "max": 32.56, "tolerance": 35.06}, 
-            	{"id": 10, "name": "MEXD-EB", "min": 31.96, "max": 34.36, "tolerance": 36.86}, 
+            	{"id": 6, "name": "MEXD-GA", "min": 22.36, "max": 24.36, "tolerance": 26.86, "require_crossover": true}, 
+            	{"id": 7, "name": "MEXD-DB", "min": 25.36, "max": 27.76, "tolerance": 30.26, "require_crossover": true}, 
+            	{"id": 8, "name": "MEXD-BA", "min": 27.82, "max": 30.16, "tolerance": 32.66, "require_crossover": true}, 
+            	{"id": 9, "name": "MEXD-CB", "min": 30.22, "max": 32.56, "tolerance": 35.06, "require_crossover": true}, 
+            	{"id": 10, "name": "MEXD-EB", "min": 31.96, "max": 34.36, "tolerance": 36.86, "require_crossover": false}, 
             	
-            	{"id": 11, "name": "MXLD-DA", "min": 49.39, "max": 51.73, "tolerance": 54.23}, 
-            	{"id": 12, "name": "MXLD-BA", "min": 51.82, "max": 54.16, "tolerance": 56.66}, 
-            	{"id": 13, "name": "MXLD-G/BA", "min": 51.82, "max": 54.16, "tolerance": 56.66}, 
+            	{"id": 11, "name": "MXLD-DA", "min": 49.39, "max": 51.73, "tolerance": 54.23, "require_crossover": true}, 
+            	{"id": 12, "name": "MXLD-BA", "min": 51.82, "max": 54.16, "tolerance": 56.66, "require_crossover": true}, 
+            	{"id": 13, "name": "MXLD-G/BA", "min": 51.82, "max": 54.16, "tolerance": 56.66, "require_crossover": true}, 
             	
-            	{"id": 14, "name": "RTLF-CA", "min": 12.85, "max": 13.75, "tolerance": 0}, 
-            	{"id": 15, "name": "RTLF-BB", "min": 14.96, "max": 17.58, "tolerance": 0}, 
-            	{"id": 16, "name": "RTLF-EA", "min": 28.81, "max": 31.43, "tolerance": 0}
+            	{"id": 14, "name": "RTLF-CA", "min": 12.85, "max": 13.75, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 15, "name": "RTLF-BB", "min": 14.96, "max": 17.58, "tolerance": 0, "require_crossover": false}, 
+            	{"id": 16, "name": "RTLF-EA", "min": 28.81, "max": 31.43, "tolerance": 0, "require_crossover": false}
             ]
         }
     },
