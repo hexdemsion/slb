@@ -203,7 +203,7 @@ function renderResultUphole(req, res_uphole) {
 	}else{
 		document.getElementById("up_res_invalid_ext").style.display = "block"
 		document.getElementById("up_fin_len_res").classList.add("is-invalid")
-		document.getElementById("down_linked_wrapper").style.display = "block"
+		document.getElementById("up_linked_wrapper").style.display = "block"
 	}
 
 	// extender exist, but check crossover exist or not
