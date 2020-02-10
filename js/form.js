@@ -230,7 +230,7 @@ function renderResultUphole(req, res_uphole) {
 	// clean all list before writing new result
 	document.getElementById("up_res_ext_list").innerHTML = ""
 
-	// iterate available extender
+	// iterate match extender
 	for (var i = 0; i < res_uphole.extender.final_ext.length; i++) {
 		var cur_ext = res_uphole.extender.final_ext[i]
 
@@ -247,6 +247,19 @@ function renderResultUphole(req, res_uphole) {
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
 		document.getElementById("up_res_ext_list").appendChild(node)
+	}
+
+	// iterate available extender
+	for (var i = 0; i < res_uphole.extender.linked_ext.length; i++) {
+		var cur_ext = res_uphole.extender.linked_ext[i]
+
+		var node = document.createElement("li")
+		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", tolerance '+cur_ext.tolerance+'"'
+
+		// append the element
+		var textnode = document.createTextNode(ext_type_string)
+		node.appendChild(textnode)
+		document.getElementById("up_res_ext_list_linked").appendChild(node)
 	}
 }
 
@@ -311,7 +324,7 @@ function renderResultDownhole(req, res_downhole) {
 	// clean all list before writing new result
 	document.getElementById("down_res_ext_list").innerHTML = ""
 
-	// iterate available extender
+	// iterate match extender
 	for (var i = 0; i < res_downhole.extender.final_ext.length; i++) {
 		var cur_ext = res_downhole.extender.final_ext[i]
 
@@ -328,6 +341,19 @@ function renderResultDownhole(req, res_downhole) {
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
 		document.getElementById("down_res_ext_list").appendChild(node)
+	}
+
+	// iterate available extender
+	for (var i = 0; i < res_downhole.extender.linked_ext.length; i++) {
+		var cur_ext = res_downhole.extender.linked_ext[i]
+
+		var node = document.createElement("li")
+		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", tolerance '+cur_ext.tolerance+'"'
+
+		// append the element
+		var textnode = document.createTextNode(ext_type_string)
+		node.appendChild(textnode)
+		document.getElementById("down_res_ext_list_linked").appendChild(node)
 	}
 }
 
