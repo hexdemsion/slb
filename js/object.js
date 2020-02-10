@@ -274,7 +274,7 @@ var DATASET = {
             "name": "Telescope Non IWOB",
             "view": 0,
             "id_uphole": [1,2,3],
-            "id_downhole": [1,2,3,4,5,6,7,8,9,10,13],
+            "id_downhole": [1,2,3,4,5,6,7,8,9,10,11,13],
             "uphole": {
                 "box": function(rop2usc, crossover){ return telescope_non_iwob_uphole_box(rop2usc, crossover) },
                 "pin": function(rop2usc, crossover){ return telescope_non_iwob_uphole_pin(rop2usc, crossover) }
