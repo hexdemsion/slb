@@ -25,7 +25,7 @@ var DATASET = {
             	{"id": 7, "name": "MEXD-DB", "min": 25.36, "max": 27.76, "tolerance": 30.26, "require_crossover": true}, 
             	{"id": 8, "name": "MEXD-BA", "min": 27.82, "max": 30.16, "tolerance": 32.66, "require_crossover": true}, 
             	{"id": 9, "name": "MEXD-CB", "min": 30.22, "max": 32.56, "tolerance": 35.06, "require_crossover": true}, 
-            	{"id": 10, "name": "MEXD-EB", "min": 31.96, "max": 34.36, "tolerance": 36.86, "require_crossover": false}, 
+            	{"id": 10, "name": "MEXD-EB", "min": 31.96, "max": 34.36, "tolerance": 36.86, "require_crossover": true}, 
             	
             	{"id": 11, "name": "MXLD-DA", "min": 49.39, "max": 51.73, "tolerance": 54.23, "require_crossover": true}, 
             	{"id": 12, "name": "MXLD-BA", "min": 51.82, "max": 54.16, "tolerance": 56.66, "require_crossover": true}, 
