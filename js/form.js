@@ -199,9 +199,11 @@ function renderResultUphole(req, res_uphole) {
 	if (res_uphole.extender.final_ext.length > 0) {
 		document.getElementById("up_res_invalid_ext").style.display = "none"
 		document.getElementById("up_fin_len_res").classList.add("is-valid")
+		document.getElementById("up_linked_wrapper").style.display = "none"
 	}else{
 		document.getElementById("up_res_invalid_ext").style.display = "block"
 		document.getElementById("up_fin_len_res").classList.add("is-invalid")
+		document.getElementById("down_linked_wrapper").style.display = "block"
 	}
 
 	// extender exist, but check crossover exist or not
@@ -257,7 +259,7 @@ function renderResultUphole(req, res_uphole) {
 		var cur_ext = res_uphole.extender.linked_ext[i]
 
 		var node = document.createElement("li")
-		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", tolerance '+cur_ext.tolerance+'"'
+		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 
 		// append the element
 		var textnode = document.createTextNode(ext_type_string)
@@ -296,9 +298,11 @@ function renderResultDownhole(req, res_downhole) {
 	if (res_downhole.extender.final_ext.length > 0) {
 		document.getElementById("down_res_invalid_ext").style.display = "none"
 		document.getElementById("down_fin_len_res").classList.add("is-valid")
+		document.getElementById("down_linked_wrapper").style.display = "none"
 	}else{
 		document.getElementById("down_res_invalid_ext").style.display = "block"
 		document.getElementById("down_fin_len_res").classList.add("is-invalid")
+		document.getElementById("down_linked_wrapper").style.display = "block"
 	}
 
 	// extender exist, but check crossover exist or not
@@ -354,7 +358,7 @@ function renderResultDownhole(req, res_downhole) {
 		var cur_ext = res_downhole.extender.linked_ext[i]
 
 		var node = document.createElement("li")
-		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", tolerance '+cur_ext.tolerance+'"'
+		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 
 		// append the element
 		var textnode = document.createTextNode(ext_type_string)
