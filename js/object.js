@@ -35,10 +35,14 @@ var DATASET = {
             	{"id": 15, "name": "RTLF-BB", "min": 14.96, "max": 17.58, "tolerance": 0, "require_crossover": false}, 
             	{"id": 16, "name": "RTLF-EA", "min": 28.81, "max": 31.43, "tolerance": 0, "require_crossover": false},
 
-                {"id": 17, "name": "MEXC-MA", "min": 25.56, "max": 27.90, "tolerance": 0, "require_crossover": false},
-                {"id": 18, "name": "MEXC-LA", "min": 27.92, "max": 30.26, "tolerance": 0, "require_crossover": false},
-                {"id": 19, "name": "MEXC-EA", "min": 30.32, "max": 32.66, "tolerance": 0, "require_crossover": false},
-                {"id": 20, "name": "MEXC-BA", "min": 32.11, "max": 33.94, "tolerance": 0, "require_crossover": false}
+                {"id": 17, "name": "MEXC-MA", "min": 25.56, "max": 27.90, "tolerance": 0, "require_crossover": true},
+                {"id": 18, "name": "MEXC-LA", "min": 27.92, "max": 30.26, "tolerance": 0, "require_crossover": true},
+                {"id": 19, "name": "MEXC-EA", "min": 30.32, "max": 32.66, "tolerance": 0, "require_crossover": true},
+                {"id": 20, "name": "MEXC-BA", "min": 32.11, "max": 33.94, "tolerance": 0, "require_crossover": true},
+
+                {"id": 21, "name": "MEXC-DA", "min": 8.24, "max": 10.12, "tolerance": 0, "require_crossover": false},
+                {"id": 22, "name": "MEXC-CA", "min": 10.60, "max": 12.48, "tolerance": 0, "require_crossover": false},
+                {"id": 23, "name": "MEXC-AB", "min": 13.00, "max": 14.88, "tolerance": 0, "require_crossover": false}
             ]
         }
     },
@@ -343,7 +347,7 @@ var DATASET = {
             "name": "Stethoscope 6",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
-            "id_downhole": [17,18,19,20],
+            "id_downhole": [17,18,19,20,21,22,23],
             "uphole": {
                 "box": function(rop2usc, crossover){ return stethoscope6_uphole_box(rop2usc, crossover) },
                 "pin": function(rop2usc, crossover){ return stethoscope6_uphole_pin(rop2usc, crossover) }
