@@ -236,8 +236,6 @@ function renderResultUphole(req, res_uphole) {
 	for (var i = 0; i < res_uphole.extender.final_ext.length; i++) {
 		var cur_ext = res_uphole.extender.final_ext[i]
 
-		var node = document.createElement("li")
-
 		// check if extender are ext 2.5"
 		if (cur_ext.isExt) {
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'", with ext 2.5"'
@@ -245,11 +243,8 @@ function renderResultUphole(req, res_uphole) {
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}
 
-		if (cur_ext.require_crossover) {
-			ext_type_string += " (require crossover)"
-		}
-
 		// append the element
+		var node = document.createElement("li")
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
 		document.getElementById("up_res_ext_list").appendChild(node)
@@ -261,18 +256,24 @@ function renderResultUphole(req, res_uphole) {
 	// iterate available extender
 	for (var i = 0; i < res_uphole.extender.linked_ext.length; i++) {
 		var cur_ext = res_uphole.extender.linked_ext[i]
-
-		var node = document.createElement("li")
 		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 
-		if (cur_ext.require_crossover) {
-			ext_type_string += " (require crossover)"
-		}
-
 		// append the element
+		var node = document.createElement("li")
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
-		document.getElementById("up_res_ext_list_linked").appendChild(node)
+		
+		if (req.hole.uphole.crossover > 0) {
+			// remove require_crossover=false from list
+			if (cur_ext.require_crossover) {
+				document.getElementById("up_res_ext_list_linked").appendChild(node)
+			}
+		}else{
+			// remove require_crossover=true from list
+			if (!cur_ext.require_crossover) {
+				document.getElementById("up_res_ext_list_linked").appendChild(node)
+			}
+		}
 	}
 }
 
@@ -351,11 +352,7 @@ function renderResultDownhole(req, res_downhole) {
 		}else{
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}
-
-		if (cur_ext.require_crossover) {
-			ext_type_string += " (require crossover)"
-		}
-
+		
 		// append the element
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
@@ -368,18 +365,24 @@ function renderResultDownhole(req, res_downhole) {
 	// iterate available extender
 	for (var i = 0; i < res_downhole.extender.linked_ext.length; i++) {
 		var cur_ext = res_downhole.extender.linked_ext[i]
-
-		var node = document.createElement("li")
 		var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 
-		if (cur_ext.require_crossover) {
-			ext_type_string += " (require crossover)"
-		}
-
 		// append the element
+		var node = document.createElement("li")
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
-		document.getElementById("down_res_ext_list_linked").appendChild(node)
+		
+		if (req.hole.uphole.crossover > 0) {
+			// remove require_crossover=false from list
+			if (cur_ext.require_crossover) {
+				document.getElementById("down_res_ext_list_linked").appendChild(node)
+			}
+		}else{
+			// remove require_crossover=true from list
+			if (!cur_ext.require_crossover) {
+				document.getElementById("down_res_ext_list_linked").appendChild(node)
+			}
+		}
 	}
 }
 
