@@ -352,7 +352,7 @@ function renderResultDownhole(req, res_downhole) {
 		}else{
 			var ext_type_string = cur_ext.name+": min "+cur_ext.min+'", max '+cur_ext.max+'"'
 		}
-		
+
 		// append the element
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
@@ -372,7 +372,7 @@ function renderResultDownhole(req, res_downhole) {
 		var textnode = document.createTextNode(ext_type_string)
 		node.appendChild(textnode)
 		
-		if (req.hole.uphole.crossover > 0) {
+		if (req.hole.downhole.crossover > 0) {
 			// remove require_crossover=false from list
 			if (cur_ext.require_crossover) {
 				document.getElementById("down_res_ext_list_linked").appendChild(node)
