@@ -33,7 +33,12 @@ var DATASET = {
             	
             	{"id": 14, "name": "RTLF-CA", "min": 12.85, "max": 13.75, "tolerance": 0, "require_crossover": false}, 
             	{"id": 15, "name": "RTLF-BB", "min": 14.96, "max": 17.58, "tolerance": 0, "require_crossover": false}, 
-            	{"id": 16, "name": "RTLF-EA", "min": 28.81, "max": 31.43, "tolerance": 0, "require_crossover": false}
+            	{"id": 16, "name": "RTLF-EA", "min": 28.81, "max": 31.43, "tolerance": 0, "require_crossover": false},
+
+                {"id": 17, "name": "MEXC-MA", "min": 25.56, "max": 27.90, "tolerance": 0, "require_crossover": false},
+                {"id": 18, "name": "MEXC-LA", "min": 27.92, "max": 30.26, "tolerance": 0, "require_crossover": false},
+                {"id": 19, "name": "MEXC-EA", "min": 30.32, "max": 32.66, "tolerance": 0, "require_crossover": false},
+                {"id": 20, "name": "MEXC-BA", "min": 32.11, "max": 33.94, "tolerance": 0, "require_crossover": false}
             ]
         }
     },
@@ -338,7 +343,7 @@ var DATASET = {
             "name": "Stethoscope 6",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
-            "id_downhole": [1,2,3,4,5,6,7,8,9,10],
+            "id_downhole": [17,18,19,20],
             "uphole": {
                 "box": function(rop2usc, crossover){ return stethoscope6_uphole_box(rop2usc, crossover) },
                 "pin": function(rop2usc, crossover){ return stethoscope6_uphole_pin(rop2usc, crossover) }
