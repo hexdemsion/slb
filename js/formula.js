@@ -1,4 +1,4 @@
-function get_extender_type(id_tool, hole, fin_len, crossover) {
+function get_extender_type(id_tool, hole, fin_len, crossover = 0) {
 	if (hole == "uphole") {
 		var hole_list = DATASET.tool.find(el => el.id === id_tool).id_uphole
 		var maybe_ext = DATASET.extender.type.uphole
@@ -92,7 +92,7 @@ function ecoscope_uphole_pin(rop2usc, crossover) {
 
 function ecoscope_downhole_box(rop2usc) {
 	var fin_len = rop2usc-53.125-1.678
-	var ext_type = get_extender_type(5, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(5, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -133,7 +133,7 @@ function arc6_downhole_pin(rop2usc, crossover) {
 
 function arc6_downhole_box(rop2usc) {
 	var fin_len = rop2usc-110.15-1.678
-	var ext_type = get_extender_type(2, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(2, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -166,7 +166,7 @@ function arc8_downhole_pin(rop2usc, crossover) {
 
 function arc8_downhole_box(rop2usc) {
 	var fin_len = rop2usc-110.19-1.678
-	var ext_type = get_extender_type(3, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(3, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -199,7 +199,7 @@ function arc9_downhole_pin(rop2usc, crossover) {
 
 function arc9_downhole_box(rop2usc) {
 	var fin_len = rop2usc-110.19-1.678
-	var ext_type = get_extender_type(4, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(4, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -232,7 +232,7 @@ function sonicscope_downhole_pin(rop2usc, crossover) {
 
 function sonicscope_downhole_box(rop2usc) {
 	var fin_len = rop2usc-61.955-1.678
-	var ext_type = get_extender_type(16, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(16, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -261,7 +261,7 @@ function telescope_iwob_downhole_pin(rop2usc, crossover) {
 
 function telescope_iwob_downhole_box(rop2usc) {
 	var fin_len = rop2usc-44.25-1.678
-	var ext_type = get_extender_type(17, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(17, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -290,7 +290,7 @@ function telescope_non_iwob_downhole_pin(rop2usc, crossover) {
 
 function telescope_non_iwob_downhole_box(rop2usc) {
 	var fin_len = rop2usc-20.25-1.678
-	var ext_type = get_extender_type(18, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(18, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -319,7 +319,7 @@ function gyropulse_downhole_pin(rop2usc, crossover) {
 
 function gyropulse_downhole_box(rop2usc) {
 	var fin_len = rop2usc-20.25-1.678
-	var ext_type = get_extender_type(8, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(8, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -335,7 +335,7 @@ function vpwd_uphole_pin(rop2usc, crossover) {
 
 function vpwd_downhole_box(rop2usc) {
 	var fin_len = rop2usc-16
-	var ext_type = get_extender_type(19, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(19, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -430,7 +430,7 @@ function microscope675_downhole_pin(rop2usc, crossover) {
 
 function microscope675_downhole_box(rop2usc) {
 	var fin_len = rop2usc-95.5-1.678
-	var ext_type = get_extender_type(11, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(11, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -439,7 +439,7 @@ function microscope675_downhole_box(rop2usc) {
 /* OPTIDRILL 675 */
 function optidrill675_uphole_box(rop2usc) {
 	var fin_len = rop2usc-54.375
-	var ext_type = get_extender_type(12, "uphole", fin_len, crossover)
+	var ext_type = get_extender_type(12, "uphole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -475,7 +475,7 @@ function optidrill900_downhole_pin(rop2usc, crossover) {
 /* PERISCOPE 475 */
 function periscope475_downhole_box(rop2usc) {
 	var fin_len = rop2usc-145.85
-	var ext_type = get_extender_type(15, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(15, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -491,7 +491,7 @@ function periscope475_uphole_pin(rop2usc, crossover) {
 /* MICROSCOPE 475 */
 function microscope475_downhole_box(rop2usc) {
 	var fin_len = rop2usc-102.5625
-	var ext_type = get_extender_type(10, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(10, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -541,7 +541,7 @@ function stethoscope4_uphole_box(rop2usc, crossover) {
 
 function stethoscope4_downhole_box(rop2usc) {
 	var fin_len = rop2usc-216.75
-	var ext_type = get_extender_type(22, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(22, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
@@ -558,7 +558,7 @@ function stethoscope6_downhole_pin(rop2usc, crossover) {
 
 function stethoscope6_downhole_box(rop2usc) {
 	var fin_len = rop2usc-131.75-1.678
-	var ext_type = get_extender_type(23, "downhole", fin_len, crossover)
+	var ext_type = get_extender_type(23, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
