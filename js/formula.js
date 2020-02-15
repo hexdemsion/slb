@@ -17,12 +17,12 @@ function get_extender_type(id_tool, hole, fin_len, crossover = 0) {
 				continue
 			}
 
-			if (tool.tolerance > 0 && (fin_len-tool.max)*(fin_len-tool.tolerance)<0) {
+			if (tool.tolerance > 0 && (fin_len-tool.max)*(fin_len-tool.tolerance)<=0) {
 				tool.isExt = true
 				final_ext.push(tool)
 			}
 			
-			if ((fin_len-tool.min)*(fin_len-tool.max)<0) {
+			if ((fin_len-tool.min)*(fin_len-tool.max)<=0) {
 				tool.isExt = false
 				final_ext.push(tool)
 			}
@@ -47,12 +47,12 @@ function get_extender_type(id_tool, hole, fin_len, crossover = 0) {
 				continue
 			}
 
-			if (tool.tolerance > 0 && (fin_len-tool.max)*(fin_len-tool.tolerance)<0) {
+			if (tool.tolerance > 0 && (fin_len-tool.max)*(fin_len-tool.tolerance)<=0) {
 				tool.isExt = true
 				final_ext.push(tool)
 			}
 
-			if ((fin_len-tool.min)*(fin_len-tool.max)<0) {
+			if ((fin_len-tool.min)*(fin_len-tool.max)<=0) {
 				tool.isExt = false
 				final_ext.push(tool)
 			}
