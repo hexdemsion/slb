@@ -59,7 +59,7 @@ var DATASET = {
             "name": "ADN 4",
             "view": 2,
             "id_uphole": [],
-            "id_downhole": [14,15,16],
+            "id_downhole": [14,15,16,24],
             "uphole": {},
             "downhole": {
                 "box": function(rop2usc, crossover){ return adn4_downhole_box(rop2usc, crossover) },
@@ -130,7 +130,7 @@ var DATASET = {
             "name": "Geosphere Transmitter",
             "view": 0,
             "id_uphole": [8],
-            "id_downhole": [14,15,16],
+            "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return geosphere_transmitter_uphole_pin(rop2usc, crossover) }
             },
@@ -143,7 +143,7 @@ var DATASET = {
             "name": "Geosphere Receiver",
             "view": 0,
             "id_uphole": [8],
-            "id_downhole": [14,15,16],
+            "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return geosphere_receiver_uphole_pin(rop2usc, crossover) }
             },
@@ -171,7 +171,7 @@ var DATASET = {
             "name": "Impulse",
             "view": 1,
             "id_uphole": [9],
-            "id_downhole": [14,15,16],
+            "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return impulse_uphole_pin(rop2usc, crossover) }
             },
@@ -184,7 +184,7 @@ var DATASET = {
             "name": "Microscope 475",
             "view": 0,
             "id_uphole": [8],
-            "id_downhole": [14,15,16],
+            "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return microscope475_uphole_pin(rop2usc, crossover) }
             },
@@ -247,7 +247,7 @@ var DATASET = {
             "name": "Periscope 475",
             "view": 0,
             "id_uphole": [8],
-            "id_downhole": [14,15,16],
+            "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return periscope475_uphole_pin(rop2usc, crossover) }
             },
@@ -305,7 +305,7 @@ var DATASET = {
             "name": "VPWD",
             "view": 0,
             "id_uphole": [8],
-            "id_downhole": [14,15,16],
+            "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return vpwd_uphole_pin(rop2usc, crossover) }
             },
@@ -327,7 +327,7 @@ var DATASET = {
             "name": "Digiscope",
             "view": 0,
             "id_uphole": [9],
-            "id_downhole": [14,15,16],
+            "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return digiscope_uphole_pin(rop2usc, crossover) }
             },
@@ -340,7 +340,7 @@ var DATASET = {
             "name": "Stethoscope 4",
             "view": 0,
             "id_uphole": [8],
-            "id_downhole": [14,15,16],
+            "id_downhole": [14,15,16,24],
             "uphole": {
                 "box": function(rop2usc, crossover){ return stethoscope4_uphole_box(rop2usc, crossover) },
                 "pin": function(rop2usc, crossover){ return stethoscope4_uphole_pin(rop2usc, crossover) }
