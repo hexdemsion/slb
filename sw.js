@@ -4,8 +4,9 @@ self.addEventListener('install', function(e) {
      return cache.addAll([
        "./",
        "./index.html",
+       "./img/logo-white.png",
+
        "./img/demo/favicon.ico",
-       "./img/demo/logo-white.png",
        "./img/demo/apple-touch-icon.png",
        "./img/demo/apple-touch-icon-57x57.png",
        "./img/demo/apple-touch-icon-72x72.png",
@@ -15,6 +16,7 @@ self.addEventListener('install', function(e) {
        "./img/demo/apple-touch-icon-144x144.png",
        "./img/demo/apple-touch-icon-152x152.png",
        "./img/demo/apple-touch-icon-180x180.png",
+       
        "./css/bootstrap.min.css",
        "./js/jquery-3.4.1.slim.min.js",
        "./js/popper.min.js",
