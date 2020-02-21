@@ -22,7 +22,7 @@ self.addEventListener('install', function(e) {
        "./js/object.js",
        "./js/formula.js",
        "./js/form.js",
-       ])
+       ].map(url => new Request(url, {credentials: 'same-origin'})))
    })
    )
 })
