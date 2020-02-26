@@ -58,12 +58,19 @@ function renderHole(elem) {
 
 	if (tool_view == 2) {
 		document.getElementById("uphole").style.display = "none"
+		document.getElementById("downhole").style.display = "block"
 		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
 	}else if (tool_view == 1) {
 		document.getElementById("uphole").style.display = "block"
+		document.getElementById("downhole").style.display = "block"
 		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "HV to shoulder collar"
+	}else if (tool_view == 3) {
+		document.getElementById("downhole").style.display = "none"
+		document.getElementById("uphole").style.display = "block"
+		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
 	}else{
 		document.getElementById("uphole").style.display = "block"
+		document.getElementById("downhole").style.display = "block"
 		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
 	}
 
@@ -148,15 +155,21 @@ function doCalculate() {
 
 	console.log(res_uphole, res_downhole)
 
-	// Since ADN 4 doesn't have uphole, so it will hide the uphole result 
-	if (req.id_tool == 1) {
+	// Since ADN 4, Lower Clink 825 doesn't have uphole, so it will hide the uphole result 
+	if (req.id_tool == 1 || req.id_tool == 29) {
 		document.getElementById("res_uphole").style.display = "none"
 	}else{
 		renderResultUphole(req, res_uphole)
 		document.getElementById("res_uphole").style.display = "block"
 	}
 
-	renderResultDownhole(req, res_downhole)
+	// Since RSS Receiver doesn't have downhole, so it will hide the uphole result 
+	if (req.id_tool == 27 || req.id_tool == 26) {
+		document.getElementById("res_downhole").style.display = "none"
+	}else{
+		renderResultDownhole(req, res_downhole)
+		document.getElementById("res_downhole").style.display = "block"
+	}
 
 	document.getElementById("form_wrapper").style.display = "none"
 	document.getElementById("result_wrapper").style.display = "block"

@@ -569,10 +569,3 @@ function stethoscope6_uphole_box(rop2usc, crossover) {
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
-
-function stethoscope6_uphole_pin(rop2usc, crossover) {
-	var fin_len = rop2usc-203.75+crossover+3.257
-	var ext_type = get_extender_type(23, "uphole", fin_len, crossover)
-	var ret_data = {"extender": ext_type, "fin_len": fin_len}
-	return ret_data
-}

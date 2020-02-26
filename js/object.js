@@ -363,6 +363,178 @@ var DATASET = {
                 "box": function(rop2usc){ return stethoscope6_downhole_box(rop2usc) },
                 "pin": function(rop2usc, crossover){ return stethoscope6_downhole_pin(rop2usc, crossover) }
             }
+        },
+        {
+            "id": 24,
+            "name": "Sonicscope 825",
+            "view": 0,
+            "id_uphole": [1,2,3,4,5,6,7],
+            "id_downhole": [1,2,3,4,5,6,7,8,9,10],
+            "uphole": {
+                "box": function(rop2usc, crossover){
+                    if (crossover == 0) {
+                        var fin_len = rop2usc-97.5+crossover-1.678
+                    }else{
+                        var fin_len = rop2usc-97.5+crossover-1.838
+                    }
+                    var ext_type = get_extender_type(24, "uphole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                },
+                "pin": function(rop2usc, crossover){
+                    var fin_len = rop2usc-97.5+crossover+3.257
+                    var ext_type = get_extender_type(24, "uphole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {
+                "box": function(rop2usc){
+                    var fin_len = rop2usc-58.375-1.678
+                    var ext_type = get_extender_type(24, "downhole", fin_len)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                },
+                "pin": function(rop2usc, crossover){
+                    var fin_len = rop2usc-58.375+crossover+3.4
+                    var ext_type = get_extender_type(24, "downhole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            }
+        },
+        {
+            "id": 25,
+            "name": "Sonicvision 675",
+            "view": 0,
+            "id_uphole": [1,2,3,4,5,6,7],
+            "id_downhole": [11,12,13],
+            "uphole": {
+                "box": function(rop2usc, crossover){
+                    if (crossover == 0) {
+                        var fin_len = rop2usc-116.625+crossover-1.678
+                    }else{
+                        var fin_len = rop2usc-116.625+crossover-1.838
+                    }
+                    var ext_type = get_extender_type(25, "uphole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                },
+                "pin": function(rop2usc, crossover){
+                    var fin_len = rop2usc-116.625+crossover+3.257
+                    var ext_type = get_extender_type(25, "uphole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {
+                "pin": function(rop2usc, crossover){
+                    var fin_len = rop2usc-135.125+crossover+3.417
+                    var ext_type = get_extender_type(25, "downhole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            }
+        },
+        {
+            "id": 26,
+            "name": "RSS Receiver 675",
+            "view": 3,
+            "id_uphole": [4,5,6,7],
+            "id_downhole": [],
+            "uphole": {
+                "box": function(rop2usc){
+                    var fin_len = rop2usc-17.03-1.678
+                    var ext_type = get_extender_type(26, "uphole", fin_len)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {}
+        },
+        {
+            "id": 27,
+            "name": "RSS Receiver 1100",
+            "view": 3,
+            "id_uphole": [4,5,6,7],
+            "id_downhole": [],
+            "uphole": {
+                "box": function(rop2usc){
+                    var fin_len = rop2usc-6.68-1.678
+                    var ext_type = get_extender_type(27, "uphole", fin_len)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {}
+        },
+        {
+            "id": 28,
+            "name": "Upper Clink 825",
+            "view": 0,
+            "id_uphole": [4,5,6,7],
+            "id_downhole": [6,7,8,9,10],
+            "uphole": {
+                "box": function(rop2usc){
+                    var fin_len = rop2usc-24.02-1.678
+                    var ext_type = get_extender_type(28, "uphole", fin_len)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {
+                "box": function(rop2usc, crossover){
+                    if (crossover == 0) {
+                        alert("If extender not required, please install correct bullnose")
+                    }
+                    var fin_len = rop2usc-crossover-30.185+3.417
+                    var ext_type = get_extender_type(28, "downhole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            }
+        },
+        {
+            "id": 29,
+            "name": "Lower Clink 825",
+            "view": 2,
+            "id_uphole": [],
+            "id_downhole": [6,7,8,9,10],
+            "uphole": {},
+            "downhole": {
+                "box": function(rop2usc, crossover){
+                    if (crossover == 0) {
+                        alert("If extender not required, please install correct bullnose")
+                    }
+                    var fin_len = rop2usc-crossover-30.17+3.417
+                    var ext_type = get_extender_type(29, "downhole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            }
+        },
+        {
+            "id": 30,
+            "name": "KAI 675",
+            "view": 0,
+            "id_uphole": [4,5,6,7],
+            "id_downhole": [6,7,8,9,10],
+            "uphole": {
+                "box": function(rop2usc){
+                    var fin_len = rop2usc-20.8125-1.678
+                    var ext_type = get_extender_type(30, "uphole", fin_len)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {
+                "pin": function(rop2usc, crossover){
+                    var fin_len = rop2usc-126.75+crossover+3.417
+                    var ext_type = get_extender_type(30, "downhole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            }
         }
     ]
 }
