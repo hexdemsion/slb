@@ -18,3 +18,10 @@ ini formulanya belum semua bro, tinggal nunggu tanggapan Bagoes.
 
 
 adn4 tidak ada keterangan PIN/BOX
+
+
+
+view 0: downhole ada, uphole ada
+view 1: untuk impulse, pake HV, bukan ROP
+view 2: downhole doang
+view 3: uphole doang

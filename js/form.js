@@ -265,6 +265,7 @@ function renderResultUphole(req, res_uphole) {
 
 	// clean all list before writing new result
 	document.getElementById("up_res_ext_list_linked").innerHTML = ""
+	var available_ext_counter = 0
 
 	// iterate available extender
 	for (var i = 0; i < res_uphole.extender.linked_ext.length; i++) {
@@ -279,14 +280,24 @@ function renderResultUphole(req, res_uphole) {
 		if (req.hole.uphole.crossover > 0) {
 			// remove require_crossover=false from list
 			if (cur_ext.require_crossover) {
+				available_ext_counter++
 				document.getElementById("up_res_ext_list_linked").appendChild(node)
 			}
 		}else{
 			// remove require_crossover=true from list
 			if (!cur_ext.require_crossover) {
+				available_ext_counter++
 				document.getElementById("up_res_ext_list_linked").appendChild(node)
 			}
 		}
+	}
+
+	if (available_ext_counter == 0) {
+		// append the element
+		var node = document.createElement("li")
+		var textnode = document.createTextNode("No result. Conflict requirement.")
+		node.appendChild(textnode)
+		document.getElementById("up_res_ext_list_linked").appendChild(node)
 	}
 }
 
@@ -374,6 +385,7 @@ function renderResultDownhole(req, res_downhole) {
 
 	// clean all list before writing new result
 	document.getElementById("down_res_ext_list_linked").innerHTML = ""
+	var available_ext_counter = 0
 
 	// iterate available extender
 	for (var i = 0; i < res_downhole.extender.linked_ext.length; i++) {
@@ -388,14 +400,24 @@ function renderResultDownhole(req, res_downhole) {
 		if (req.hole.downhole.crossover > 0) {
 			// remove require_crossover=false from list
 			if (cur_ext.require_crossover) {
+				available_ext_counter++
 				document.getElementById("down_res_ext_list_linked").appendChild(node)
 			}
 		}else{
 			// remove require_crossover=true from list
 			if (!cur_ext.require_crossover) {
+				available_ext_counter++
 				document.getElementById("down_res_ext_list_linked").appendChild(node)
 			}
 		}
+	}
+
+	if (available_ext_counter == 0) {
+		// append the element
+		var node = document.createElement("li")
+		var textnode = document.createTextNode("No result. Conflict requirement.")
+		node.appendChild(textnode)
+		document.getElementById("down_res_ext_list_linked").appendChild(node)
 	}
 }
 

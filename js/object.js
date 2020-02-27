@@ -237,10 +237,28 @@ var DATASET = {
             "id": 14,
             "name": "Periscope 675",
             "view": 0,
-            "id_uphole": [4,5,6,7],
+            "id_uphole": [1,2,3,4,5,6,7],
             "id_downhole": [6,7,8,9,10],
-            "uphole": {},
-            "downhole": {}
+            "uphole": {
+                "box": function(rop2usc, crossover){
+                    if (crossover == 0) {
+                        var fin_len = rop2usc-17.66-1.678
+                    }else{
+                        var fin_len = rop2usc-17.66+crossover-1.838
+                    }
+                    var ext_type = get_extender_type(14, "uphole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {
+                "pin": function(rop2usc, crossover){
+                    var fin_len = rop2usc-164.75+crossover+3.417
+                    var ext_type = get_extender_type(14, "downhole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            }
         },
         {
             "id": 15,
@@ -438,7 +456,7 @@ var DATASET = {
         },
         {
             "id": 26,
-            "name": "RSS Receiver 675",
+            "name": "RSS Receiver Threaded 675",
             "view": 3,
             "id_uphole": [4,5,6,7],
             "id_downhole": [],
@@ -454,7 +472,7 @@ var DATASET = {
         },
         {
             "id": 27,
-            "name": "RSS Receiver 1100",
+            "name": "RSS Receiver Threaded 1100",
             "view": 3,
             "id_uphole": [4,5,6,7],
             "id_downhole": [],
@@ -531,6 +549,91 @@ var DATASET = {
                 "pin": function(rop2usc, crossover){
                     var fin_len = rop2usc-126.75+crossover+3.417
                     var ext_type = get_extender_type(30, "downhole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            }
+        },
+        {
+            "id": 31,
+            "name": "RSS Receiver Threaded 900",
+            "view": 3,
+            "id_uphole": [4,5,6,7],
+            "id_downhole": [],
+            "uphole": {
+                "box": function(rop2usc){
+                    var fin_len = rop2usc-8.53-1.678
+                    var ext_type = get_extender_type(31, "uphole", fin_len)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {}
+        },
+        {
+            "id": 32,
+            "name": "Flex 675",
+            "view": 0,
+            "id_uphole": [4,5,6,7],
+            "id_downhole": [1,2,3,4,5],
+            "uphole": {
+                "box": function(rop2usc){
+                    var fin_len = rop2usc-8.53-1.678
+                    var ext_type = get_extender_type(32, "uphole", fin_len)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {
+                "pin": function(rop2usc, crossover){
+                    var fin_len = rop2usc-crossover-77.31+3.147
+                    var ext_type = get_extender_type(32, "uphole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            }
+        },
+        {
+            "id": 33,
+            "name": "Flex 900",
+            "view": 0,
+            "id_uphole": [4,5,6,7],
+            "id_downhole": [1,2,3,4,5],
+            "uphole": {
+                "box": function(rop2usc){
+                    var fin_len = rop2usc-7.5-1.678
+                    var ext_type = get_extender_type(33, "uphole", fin_len)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {
+                "pin": function(rop2usc, crossover){
+                    var fin_len = rop2usc-crossover-77.31+3.147
+                    var ext_type = get_extender_type(33, "downhole", fin_len, crossover)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            }
+        },
+        {
+            "id": 34,
+            "name": "Flex 1100",
+            "view": 0,
+            "id_uphole": [4,5,6,7],
+            "id_downhole": [1,2,3,4,5],
+            "uphole": {
+                "box": function(rop2usc){
+                    var fin_len = rop2usc-7.5-1.678
+                    var ext_type = get_extender_type(34, "uphole", fin_len)
+                    var ret_data = {"extender": ext_type, "fin_len": fin_len}
+                    return ret_data
+                }
+            },
+            "downhole": {
+                "pin": function(rop2usc, crossover){
+                    var fin_len = rop2usc-crossover-77.31+3.147
+                    var ext_type = get_extender_type(34, "downhole", fin_len, crossover)
                     var ret_data = {"extender": ext_type, "fin_len": fin_len}
                     return ret_data
                 }
