@@ -121,7 +121,7 @@ function doCalculate() {
 	    	"uphole": {"conn": null, "rop2usc": null, "crossover": null},
 	    	"downhole": {"conn": null, "rop2usc": null, "crossover": null}
 	    }
-	}	
+	}
 
 	req.id_tool = parseInt(document.getElementById("tool_selector").value)
 
@@ -132,6 +132,16 @@ function doCalculate() {
 	req.hole.downhole.conn = document.getElementById("down_connection").value
 	req.hole.downhole.rop2usc = parseFloat(document.getElementById("down_rop2usc").value)
 	req.hole.downhole.crossover = parseFloat(document.getElementById("down_crossover").value)
+
+	// this function added for uphole note
+	// for certain tools. regarding the update
+	// from latest6 sheet in email on 28 Feb 2020
+	uphole_noted_tool = [10, 15, 9, 6, 7, 21, 22, 19]
+	if (uphole_noted_tool.includes(req.id_tool)) {
+		document.getElementById("uphole_details_note").style.display = "block"
+	}else{
+		document.getElementById("uphole_details_note").style.display = "none"
+	}
 
 	if (req.hole.uphole.conn == "pin") {
 		if (req.hole.uphole.crossover < 1 || isNaN(req.hole.uphole.crossover)) {
