@@ -338,15 +338,6 @@ var DATASET = {
             }
         },
         {
-            "id": 20,
-            "name": "Sonicvision",
-            "view": 0,
-            "id_uphole": [1,2,3],
-            "id_downhole": [11,12],
-            "uphole": {},
-            "downhole": {}
-        },
-        {
             "id": 21,
             "name": "Digiscope",
             "view": 0,

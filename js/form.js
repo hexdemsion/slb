@@ -166,7 +166,8 @@ function doCalculate() {
 	console.log(res_uphole, res_downhole)
 
 	// Since ADN 4, Lower Clink 825 doesn't have uphole, so it will hide the uphole result 
-	if (req.id_tool == 1 || req.id_tool == 29) {
+	var no_uphole_tool = [1,29]
+	if (no_uphole_tool.includes(req.id_tool)) {
 		document.getElementById("res_uphole").style.display = "none"
 	}else{
 		renderResultUphole(req, res_uphole)
@@ -174,7 +175,8 @@ function doCalculate() {
 	}
 
 	// Since RSS Receiver doesn't have downhole, so it will hide the uphole result 
-	if (req.id_tool == 27 || req.id_tool == 26) {
+	var no_downhole_tool = [26,27,31]
+	if (no_downhole_tool.includes(req.id_tool)) {
 		document.getElementById("res_downhole").style.display = "none"
 	}else{
 		renderResultDownhole(req, res_downhole)
