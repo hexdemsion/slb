@@ -49,7 +49,13 @@ var DATASET = {
                 {"id": 26, "name": "RTLF-BA", "min": 14.96, "max": 17.58, "tolerance": 0, "require_crossover": false},
                 {"id": 27, "name": "RTLF-BC", "min": 14.96, "max": 17.58, "tolerance": 0, "require_crossover": false},
                 {"id": 28, "name": "RTLF-BD", "min": 14.96, "max": 17.58, "tolerance": 0, "require_crossover": false},
-                {"id": 29, "name": "RTLF-DA", "min": 14.96, "max": 17.58, "tolerance": 0, "require_crossover": false}
+                {"id": 29, "name": "RTLF-DA", "min": 14.96, "max": 17.58, "tolerance": 0, "require_crossover": false},
+
+                {"id": 30, "name": "EXTF-AA", "min": 12.82, "max": 15.16, "tolerance": 0, "require_crossover": true}, 
+                {"id": 31, "name": "EXTF-BA", "min": 10.41, "max": 12.75, "tolerance": 0, "require_crossover": true}, 
+                {"id": 32, "name": "EXTF-CA", "min": 8.06, "max": 10.40, "tolerance": 0, "require_crossover": true}, 
+                {"id": 33, "name": "EXTF-DA", "min": 12.82, "max": 15.16, "tolerance": 0, "require_crossover": true}, 
+                {"id": 34, "name": "EXTF-DB", "min": 12.82, "max": 15.16, "tolerance": 0, "require_crossover": true}, 
             ]
         }
     },
@@ -575,7 +581,7 @@ var DATASET = {
             "name": "Flex 675",
             "view": 0,
             "id_uphole": [4,5,6,7],
-            "id_downhole": [1,2,3,4,5],
+            "id_downhole": [30,31,32,33,34],
             "uphole": {
                 "box": function(rop2usc){
                     var fin_len = rop2usc-8.53-1.678

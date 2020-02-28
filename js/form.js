@@ -144,20 +144,20 @@ function doCalculate() {
 	}
 
 	if (req.hole.uphole.conn == "pin") {
-		if (req.hole.uphole.crossover < 1 || isNaN(req.hole.uphole.crossover)) {
-			alert("Uphole PIN require Crossover value")
-			return
-		}
+		// if (req.hole.uphole.crossover < 1 || isNaN(req.hole.uphole.crossover)) {
+		// 	alert("Uphole PIN require Crossover value")
+		// 	return
+		// }
 		var res_uphole = DATASET.tool.find(el => el.id === req.id_tool).uphole.pin(req.hole.uphole.rop2usc, req.hole.uphole.crossover)
 	}else if (req.hole.uphole.conn == "box") {
 		var res_uphole = DATASET.tool.find(el => el.id === req.id_tool).uphole.box(req.hole.uphole.rop2usc, req.hole.uphole.crossover)
 	}
 
 	if (req.hole.downhole.conn == "pin") {
-		if (req.hole.downhole.crossover < 1 || isNaN(req.hole.downhole.crossover)) {
-			alert("Downhole PIN require Crossover value")
-			return
-		}
+		// if (req.hole.downhole.crossover < 1 || isNaN(req.hole.downhole.crossover)) {
+		// 	alert("Downhole PIN require Crossover value")
+		// 	return
+		// }
 		var res_downhole = DATASET.tool.find(el => el.id === req.id_tool).downhole.pin(req.hole.downhole.rop2usc, req.hole.downhole.crossover)
 	}else if (req.hole.downhole.conn == "box") {
 		var res_downhole = DATASET.tool.find(el => el.id === req.id_tool).downhole.box(req.hole.downhole.rop2usc, req.hole.downhole.crossover)
