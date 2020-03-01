@@ -832,7 +832,7 @@ var DATASET = {
             "downhole": {
                 "pin": function(rop2usc, crossover){
                     var fin_len = rop2usc-crossover-77.31+3.147
-                    var ext_type = get_extender_type(32, "uphole", fin_len, crossover)
+                    var ext_type = get_extender_type(32, "downhole", fin_len, crossover)
                     var ret_data = {"extender": ext_type, "fin_len": fin_len}
                     return ret_data
                 }
