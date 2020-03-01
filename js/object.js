@@ -65,6 +65,14 @@ var DATASET = {
             "name": "ADN 4",
             "view": 2,
             "id_uphole": [],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [14,15,16,24],
             "uphole": {},
             "downhole": {
@@ -76,6 +84,14 @@ var DATASET = {
             "name": "ARC 6",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc, crossover){ return arc6_uphole_box(rop2usc, crossover) },
@@ -91,6 +107,14 @@ var DATASET = {
             "name": "ARC 8",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc, crossover){ return arc8_uphole_box(rop2usc, crossover) },
@@ -106,6 +130,14 @@ var DATASET = {
             "name": "ARC 9",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc, crossover){ return arc9_uphole_box(rop2usc, crossover) },
@@ -121,6 +153,14 @@ var DATASET = {
             "name": "Ecoscope",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc, crossover){ return ecoscope_uphole_box(rop2usc, crossover) },
@@ -136,6 +176,14 @@ var DATASET = {
             "name": "Geosphere Transmitter",
             "view": 0,
             "id_uphole": [8],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return geosphere_transmitter_uphole_pin(rop2usc, crossover) }
@@ -149,6 +197,14 @@ var DATASET = {
             "name": "Geosphere Receiver",
             "view": 0,
             "id_uphole": [8],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return geosphere_receiver_uphole_pin(rop2usc, crossover) }
@@ -162,6 +218,14 @@ var DATASET = {
             "name": "Gyropulse",
             "view": 0,
             "id_uphole": [1,2,3],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10,13],
             "uphole": {
                 "box": function(rop2usc, crossover){ return gyropulse_uphole_box(rop2usc, crossover) },
@@ -177,6 +241,14 @@ var DATASET = {
             "name": "Impulse",
             "view": 1,
             "id_uphole": [9],
+            "label_form": {
+                "uphole": ["Length from HV to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["HV", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return impulse_uphole_pin(rop2usc, crossover) }
@@ -190,6 +262,14 @@ var DATASET = {
             "name": "Microscope 475",
             "view": 0,
             "id_uphole": [8],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return microscope475_uphole_pin(rop2usc, crossover) }
@@ -203,6 +283,14 @@ var DATASET = {
             "name": "Microscope 675",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc, crossover){ return microscope675_uphole_box(rop2usc, crossover) },
@@ -218,6 +306,14 @@ var DATASET = {
             "name": "Optidrill 675",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc){ return optidrill675_uphole_box(rop2usc) },
@@ -231,6 +327,14 @@ var DATASET = {
             "name": "Optidrill 900",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc, crossover){ return optidrill900_uphole_box(rop2usc, crossover) },
@@ -244,6 +348,14 @@ var DATASET = {
             "name": "Periscope 675",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc, crossover){
@@ -271,6 +383,14 @@ var DATASET = {
             "name": "Periscope 475",
             "view": 0,
             "id_uphole": [8],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return periscope475_uphole_pin(rop2usc, crossover) }
@@ -284,6 +404,14 @@ var DATASET = {
             "name": "Sonicscope 675",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc, crossover){ return sonicscope_uphole_box(rop2usc, crossover) },
@@ -299,6 +427,14 @@ var DATASET = {
             "name": "Telescope IWOB",
             "view": 0,
             "id_uphole": [1,2,3],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10,13],
             "uphole": {
                 "box": function(rop2usc, crossover){ return telescope_iwob_uphole_box(rop2usc, crossover) },
@@ -314,6 +450,14 @@ var DATASET = {
             "name": "Telescope Non IWOB",
             "view": 0,
             "id_uphole": [1,2,3],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10,11,13],
             "uphole": {
                 "box": function(rop2usc, crossover){ return telescope_non_iwob_uphole_box(rop2usc, crossover) },
@@ -329,6 +473,14 @@ var DATASET = {
             "name": "VPWD",
             "view": 0,
             "id_uphole": [8],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return vpwd_uphole_pin(rop2usc, crossover) }
@@ -342,6 +494,14 @@ var DATASET = {
             "name": "Digiscope",
             "view": 0,
             "id_uphole": [9],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [14,15,16,24],
             "uphole": {
                 "pin": function(rop2usc, crossover){ return digiscope_uphole_pin(rop2usc, crossover) }
@@ -355,6 +515,14 @@ var DATASET = {
             "name": "Stethoscope 4",
             "view": 0,
             "id_uphole": [8],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [14,15,16,24],
             "uphole": {
                 "box": function(rop2usc, crossover){ return stethoscope4_uphole_box(rop2usc, crossover) },
@@ -369,6 +537,14 @@ var DATASET = {
             "name": "Stethoscope 6",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [17,18,19,20,21,22,23],
             "uphole": {
                 "box": function(rop2usc, crossover){ return stethoscope6_uphole_box(rop2usc, crossover) },
@@ -384,6 +560,14 @@ var DATASET = {
             "name": "Sonicscope 825",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc, crossover){
@@ -423,6 +607,14 @@ var DATASET = {
             "name": "Sonicvision 675",
             "view": 0,
             "id_uphole": [1,2,3,4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [11,12,13],
             "uphole": {
                 "box": function(rop2usc, crossover){
@@ -456,6 +648,14 @@ var DATASET = {
             "name": "RSS Receiver Threaded 675",
             "view": 3,
             "id_uphole": [4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from Body thread Shoulder to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [],
             "uphole": {
                 "box": function(rop2usc){
@@ -472,6 +672,14 @@ var DATASET = {
             "name": "RSS Receiver Threaded 1100",
             "view": 3,
             "id_uphole": [4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from Body thread Shoulder to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [],
             "uphole": {
                 "box": function(rop2usc){
@@ -488,6 +696,14 @@ var DATASET = {
             "name": "Upper Clink 825",
             "view": 0,
             "id_uphole": [4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc){
@@ -514,6 +730,14 @@ var DATASET = {
             "name": "Lower Clink 825",
             "view": 2,
             "id_uphole": [],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [6,7,8,9,10],
             "uphole": {},
             "downhole": {
@@ -533,6 +757,14 @@ var DATASET = {
             "name": "KAI 675",
             "view": 0,
             "id_uphole": [4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from ROP to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [6,7,8,9,10],
             "uphole": {
                 "box": function(rop2usc){
@@ -556,6 +788,14 @@ var DATASET = {
             "name": "RSS Receiver Threaded 900",
             "view": 3,
             "id_uphole": [4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from Body thread Shoulder to Uphole", "Crossover"],
+                "downhole": ["Length from ROP to Downhole", "Crossover"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "Crossover"],
+                "downhole": ["ROP", "Crossover"],
+            },
             "id_downhole": [],
             "uphole": {
                 "box": function(rop2usc){
@@ -572,6 +812,14 @@ var DATASET = {
             "name": "Flex 675",
             "view": 0,
             "id_uphole": [4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from Shoulder to Uphole", "Uphole shoulder to End on Step ID"],
+                "downhole": ["Length from ROP to Downhole", "Uphole shoulder to End on Step ID"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "End StepID"],
+                "downhole": ["ROP", "End StepID"],
+            },
             "id_downhole": [30,31,32,33,34],
             "uphole": {
                 "box": function(rop2usc){
@@ -595,6 +843,14 @@ var DATASET = {
             "name": "Flex 900",
             "view": 0,
             "id_uphole": [4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from Shoulder to Uphole", "Uphole shoulder to End on Step ID"],
+                "downhole": ["Length from ROP to Downhole", "Uphole shoulder to End on Step ID"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "End StepID"],
+                "downhole": ["ROP", "End StepID"],
+            },
             "id_downhole": [1,2,3,4,5],
             "uphole": {
                 "box": function(rop2usc){
@@ -618,6 +874,14 @@ var DATASET = {
             "name": "Flex 1100",
             "view": 0,
             "id_uphole": [4,5,6,7],
+            "label_form": {
+                "uphole": ["Length from Shoulder to Uphole", "Uphole shoulder to End on Step ID"],
+                "downhole": ["Length from ROP to Downhole", "Uphole shoulder to End on Step ID"],
+            },
+            "label_result": {
+                "uphole": ["ROP", "End StepID"],
+                "downhole": ["ROP", "End StepID"],
+            },
             "id_downhole": [1,2,3,4,5],
             "uphole": {
                 "box": function(rop2usc){

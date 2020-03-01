@@ -59,20 +59,29 @@ function renderHole(elem) {
 	if (tool_view == 2) {
 		document.getElementById("uphole").style.display = "none"
 		document.getElementById("downhole").style.display = "block"
-		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
+		// document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
 	}else if (tool_view == 1) {
 		document.getElementById("uphole").style.display = "block"
 		document.getElementById("downhole").style.display = "block"
-		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "HV to shoulder collar"
+		// document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "HV to shoulder collar"
 	}else if (tool_view == 3) {
 		document.getElementById("downhole").style.display = "none"
 		document.getElementById("uphole").style.display = "block"
-		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
+		// document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
 	}else{
 		document.getElementById("uphole").style.display = "block"
 		document.getElementById("downhole").style.display = "block"
-		document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
+		// document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = "ROP to shoulder collar"
 	}
+
+	// set label in the form
+	var tool_data = DATASET.tool.find(el => el.id === tool_id)
+	document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = tool_data.label_form.uphole[0]
+	document.querySelectorAll('[for=up_crossover]')[0].innerHTML = tool_data.label_form.uphole[1]
+
+	document.querySelectorAll('[for=down_rop2usc]')[0].innerHTML = tool_data.label_form.downhole[0]
+	document.querySelectorAll('[for=down_crossover]')[0].innerHTML = tool_data.label_form.downhole[1]
+
 
 	if (!isNaN(tool_id)) {
 		document.getElementById("calc_btn").disabled = false
@@ -197,12 +206,14 @@ function renderResultUphole(req, res_uphole) {
 	document.getElementById("up_res_rop2usc").innerHTML = req.hole.uphole.rop2usc
 	document.getElementById("up_res_crossover").innerHTML = req.hole.uphole.crossover
 
-	// Switching between ROP / HV for impulse tool 
-	if (req.id_tool == 9) {
-		document.getElementById("up_collar_identifier").innerHTML = "HV"
-	}else{
-		document.getElementById("up_collar_identifier").innerHTML = "ROP"
-	}
+	// set label for tablehead details
+	var tool_data = DATASET.tool.find(el => el.id === req.id_tool)
+	document.getElementById("res_up_label_0").innerHTML = tool_data.label_result.uphole[0]
+	document.getElementById("res_up_label_1").innerHTML = tool_data.label_result.uphole[1]
+
+	document.getElementById("res_down_label_1").innerHTML = tool_data.label_result.downhole[1]
+	document.getElementById("res_down_label_1").innerHTML = tool_data.label_result.downhole[1]
+
 
 	// Write final result to result form
 	document.getElementById("up_fin_len_res").value = res_uphole.fin_len+" inch"
