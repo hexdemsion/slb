@@ -55,7 +55,37 @@ function getParamFromFun(func) {
 function renderHole(elem) {
 	var tool_view = parseInt(elem.getAttribute("view"))
 	var tool_id = parseInt(elem.getAttribute("value"))
+	document.getElementById("calc_btn").disabled = false
 
+	// exception form for tool FLEX
+	if ([32,33,34].includes(tool_id)) {
+		// alert("this form flex")
+		document.getElementById("common_tool").style.display = "none"
+		document.getElementById("flex_form").style.display = "block"
+
+		flex_render(tool_view, tool_id)
+	}else{
+		document.getElementById("common_tool").style.display = "block"
+		document.getElementById("flex_form").style.display = "none"
+
+		common_render(tool_view, tool_id)
+	}
+
+}
+
+
+function flex_render(tool_view, tool_id) {	
+	// set label in the form
+	var tool_data = DATASET.tool.find(el => el.id === tool_id)
+	document.querySelectorAll('[for=up_rop2usc]')[0].innerHTML = tool_data.label_form.uphole[0]
+	document.querySelectorAll('[for=up_crossover]')[0].innerHTML = tool_data.label_form.uphole[1]
+
+	document.querySelectorAll('[for=down_rop2usc]')[0].innerHTML = tool_data.label_form.downhole[0]
+	document.querySelectorAll('[for=down_crossover]')[0].innerHTML = tool_data.label_form.downhole[1]
+}
+
+
+function common_render(tool_view, tool_id) {
 	if (tool_view == 2) {
 		document.getElementById("uphole").style.display = "none"
 		document.getElementById("downhole").style.display = "block"
@@ -114,7 +144,6 @@ function renderHole(elem) {
 		document.getElementById("calc_btn").disabled = true
 		return
 	}
-
 }
 
 function backAction() {
@@ -134,13 +163,24 @@ function doCalculate() {
 
 	req.id_tool = parseInt(document.getElementById("tool_selector").value)
 
-	req.hole.uphole.conn = document.getElementById("up_connection").value
-	req.hole.uphole.rop2usc = parseFloat(document.getElementById("up_rop2usc").value)
-	req.hole.uphole.crossover = parseFloat(document.getElementById("up_crossover").value)
+	// exception for tool FLEX
+	if ([32,33,34].includes(req.id_tool)) {
+		req.hole.uphole.conn = "box"
+		req.hole.uphole.rop2usc = parseFloat(document.getElementById("full_coll").value)
+		req.hole.uphole.crossover = parseFloat(document.getElementById("stepid").value)
 
-	req.hole.downhole.conn = document.getElementById("down_connection").value
-	req.hole.downhole.rop2usc = parseFloat(document.getElementById("down_rop2usc").value)
-	req.hole.downhole.crossover = parseFloat(document.getElementById("down_crossover").value)
+		req.hole.downhole.conn = "pin"
+		req.hole.downhole.rop2usc = parseFloat(document.getElementById("full_coll").value)
+		req.hole.downhole.crossover = parseFloat(document.getElementById("stepid").value)
+	}else{
+		req.hole.uphole.conn = document.getElementById("up_connection").value
+		req.hole.uphole.rop2usc = parseFloat(document.getElementById("up_rop2usc").value)
+		req.hole.uphole.crossover = parseFloat(document.getElementById("up_crossover").value)
+
+		req.hole.downhole.conn = document.getElementById("down_connection").value
+		req.hole.downhole.rop2usc = parseFloat(document.getElementById("down_rop2usc").value)
+		req.hole.downhole.crossover = parseFloat(document.getElementById("down_crossover").value)
+	}
 
 	// this function added for uphole note
 	// for certain tools. regarding the update
@@ -211,7 +251,7 @@ function renderResultUphole(req, res_uphole) {
 	document.getElementById("res_up_label_0").innerHTML = tool_data.label_result.uphole[0]
 	document.getElementById("res_up_label_1").innerHTML = tool_data.label_result.uphole[1]
 
-	document.getElementById("res_down_label_1").innerHTML = tool_data.label_result.downhole[1]
+	document.getElementById("res_down_label_0").innerHTML = tool_data.label_result.downhole[0]
 	document.getElementById("res_down_label_1").innerHTML = tool_data.label_result.downhole[1]
 
 

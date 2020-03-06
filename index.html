@@ -69,41 +69,64 @@
             </select>
           </div>
           <br>
-          <div id="uphole">
-            <h4>Uphole</h4>
-            <div class="form-group">
-              <label for="up_rop2usc">ROP to shoulder collar</label>
-              <input class="form-control" type="number" id="up_rop2usc" placeholder="in inches, with dot">
+          <div id="common_tool">
+            <div id="uphole">
+              <h4>Uphole</h4>
+              <div class="form-group">
+                <label for="up_rop2usc">ROP to shoulder collar</label>
+                <input class="form-control" type="number" id="up_rop2usc" placeholder="in inches, with dot">
+              </div>
+              <div class="form-group">
+                <label for="up_crossover">Crossover</label>
+                <input class="form-control" type="number" id="up_crossover" placeholder="in inches, with dot (optional)">
+              </div>
+              <div class="form-group">
+                <label for="up_connection">Connection</label>
+                <select class="form-control" id="up_connection">
+                  <option value="0">-- Select end --</option>
+                </select>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="up_crossover">Crossover</label>
-              <input class="form-control" type="number" id="up_crossover" placeholder="in inches, with dot (optional)">
-            </div>
-            <div class="form-group">
-              <label for="up_connection">Connection</label>
-              <select class="form-control" id="up_connection">
-                <option value="0">-- Select end --</option>
-              </select>
+            <br>
+            <div id="downhole">
+              <h4>Downhole</h4>
+              <div class="form-group">
+                <label for="down_rop2usc">ROP to shoulder collar</label>
+                <input class="form-control" type="number" id="down_rop2usc" placeholder="in inches, with dot">
+              </div>
+              <div class="form-group">
+                <label for="down_crossover">Crossover</label>
+                <input class="form-control" type="number" id="down_crossover" placeholder="in inches, with dot (optional)">
+              </div>
+              <div class="form-group">
+                <label for="down_connection">Connection</label>
+                <select class="form-control" id="down_connection">
+                  <option>-- Select end --</option>
+                </select>
+              </div>
             </div>
           </div>
-          <br>
-          <div id="downhole">
-            <h4>Downhole</h4>
-            <div class="form-group">
-              <label for="down_rop2usc">ROP to shoulder collar</label>
-              <input class="form-control" type="number" id="down_rop2usc" placeholder="in inches, with dot">
-            </div>
-            <div class="form-group">
-              <label for="down_crossover">Crossover</label>
-              <input class="form-control" type="number" id="down_crossover" placeholder="in inches, with dot (optional)">
-            </div>
-            <div class="form-group">
-              <label for="down_connection">Connection</label>
-              <select class="form-control" id="down_connection">
-                <option>-- Select end --</option>
-              </select>
-            </div>
+
+          <!-- Below is exception form tool -->
+          <div id="flex_form" style="display: none;">
+            <form>
+              <div>
+                <h4>Input</h4>
+                <div class="form-group">
+                  <label for="full_coll">Full collar length (Shoulder to shoulder)</label>
+                  <input class="form-control" type="number" id="full_coll" placeholder="in inches, with dot">
+                </div>
+                <div class="form-group">
+                  <label for="stepid">Uphole shoulder to End on Step ID</label>
+                  <input class="form-control" type="number" id="stepid" placeholder="in inches, with dot (optional)">
+                </div>
+              </div>
+            </form>
           </div>
+
+
+
+
           <br>
           <div class="form-group">
             <button class="form-control btn" style="background-color: #003365; color: #fff" type="button" onclick="doCalculate()" id="calc_btn" disabled>Calculate</button>

@@ -813,12 +813,12 @@ var DATASET = {
             "view": 0,
             "id_uphole": [4,5,6,7],
             "label_form": {
-                "uphole": ["Length from Shoulder to Uphole", "Uphole shoulder to End on Step ID"],
-                "downhole": ["Length from ROP to Downhole", "Uphole shoulder to End on Step ID"],
+                "uphole": ["", ""],
+                "downhole": ["", ""],
             },
             "label_result": {
-                "uphole": ["ROP", "End StepID"],
-                "downhole": ["ROP", "End StepID"],
+                "uphole": ["Full collar length", "End StepID"],
+                "downhole": ["Full collar length", "End StepID"],
             },
             "id_downhole": [30,31,32,33,34],
             "uphole": {
@@ -844,12 +844,12 @@ var DATASET = {
             "view": 0,
             "id_uphole": [4,5,6,7],
             "label_form": {
-                "uphole": ["Length from Shoulder to Uphole", "Uphole shoulder to End on Step ID"],
-                "downhole": ["Length from ROP to Downhole", "Uphole shoulder to End on Step ID"],
+                "uphole": ["", ""],
+                "downhole": ["", ""],
             },
             "label_result": {
-                "uphole": ["ROP", "End StepID"],
-                "downhole": ["ROP", "End StepID"],
+                "uphole": ["Full collar length", "End StepID"],
+                "downhole": ["Full collar length", "End StepID"],
             },
             "id_downhole": [1,2,3,4,5],
             "uphole": {
@@ -875,12 +875,12 @@ var DATASET = {
             "view": 0,
             "id_uphole": [4,5,6,7],
             "label_form": {
-                "uphole": ["Length from Shoulder to Uphole", "Uphole shoulder to End on Step ID"],
-                "downhole": ["Length from ROP to Downhole", "Uphole shoulder to End on Step ID"],
+                "uphole": ["", ""],
+                "downhole": ["", ""],
             },
             "label_result": {
-                "uphole": ["ROP", "End StepID"],
-                "downhole": ["ROP", "End StepID"],
+                "uphole": ["Full collar length", "End StepID"],
+                "downhole": ["Full collar length", "End StepID"],
             },
             "id_downhole": [1,2,3,4,5],
             "uphole": {
