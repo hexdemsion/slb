@@ -414,12 +414,12 @@ var DATASET = {
             },
             "id_downhole": [1,2,3,4,5,6,7,8,9,10],
             "uphole": {
-                "box": function(rop2usc, crossover){ return sonicscope_uphole_box(rop2usc, crossover) },
-                "pin": function(rop2usc, crossover){ return sonicscope_uphole_pin(rop2usc, crossover) }
+                "box": function(rop2usc, crossover){ return sonicscope675_uphole_box(rop2usc, crossover) },
+                "pin": function(rop2usc, crossover){ return sonicscope675_uphole_pin(rop2usc, crossover) }
             },
             "downhole": {
-                "box": function(rop2usc){ return sonicscope_downhole_box(rop2usc) },
-                "pin": function(rop2usc, crossover){ return sonicscope_downhole_pin(rop2usc, crossover) }
+                "box": function(rop2usc){ return sonicscope675_downhole_box(rop2usc) },
+                "pin": function(rop2usc, crossover){ return sonicscope675_downhole_pin(rop2usc, crossover) }
             }
         },
         {

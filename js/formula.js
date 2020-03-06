@@ -204,10 +204,10 @@ function arc9_downhole_box(rop2usc) {
 	return ret_data
 }
 
-/* SONICSCOPE */
-function sonicscope_uphole_box(rop2usc, crossover) {
+/* SONICSCOPE 675 */
+function sonicscope675_uphole_box(rop2usc, crossover) {
 	if (crossover == 0) {
-		var fin_len = rop2usc-99-178
+		var fin_len = rop2usc-99.178
 	}else{
 		var fin_len = rop2usc-97.5+crossover-1.838
 	}
@@ -216,21 +216,21 @@ function sonicscope_uphole_box(rop2usc, crossover) {
 	return ret_data
 }
 
-function sonicscope_uphole_pin(rop2usc, crossover) {
+function sonicscope675_uphole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-97.5+crossover+3.257
 	var ext_type = get_extender_type(16, "uphole", fin_len, crossover)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
 
-function sonicscope_downhole_pin(rop2usc, crossover) {
+function sonicscope675_downhole_pin(rop2usc, crossover) {
 	var fin_len = rop2usc-61.955+crossover+3.4
 	var ext_type = get_extender_type(16, "downhole", fin_len, crossover)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
 	return ret_data
 }
 
-function sonicscope_downhole_box(rop2usc) {
+function sonicscope675_downhole_box(rop2usc) {
 	var fin_len = rop2usc-61.955-1.678
 	var ext_type = get_extender_type(16, "downhole", fin_len)
 	var ret_data = {"extender": ext_type, "fin_len": fin_len}
